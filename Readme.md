@@ -1,4 +1,4 @@
-Ceci est l'un des deux fichiers Node-Red qui ont été fusionnés pour obtenir l'interface utilisateur du PI Oasis. 
+Ceci est l'un des deux fichiers `Node-Red` qui ont été fusionnés pour obtenir l'interface utilisateur du PI Oasis. 
 
 Cette version permet entre autres:
 - d'afficher les **données** (température, concentration en CO2, humidité) mesurées par les capteurs
@@ -25,25 +25,25 @@ Un script Python récupère les données de présence reçues par un capteur inf
 
 - **Affichage des données des capteurs**
 La température, l'humidité et la concentration en CO2 sont collectées par une carte Arduino, elle-même en communication avec la carte RaspberryPi qui pilote l'écran tactile. Un programme Python traite les données, les rendant récupérables par Node-Red. Les données arrivent simultanément les unes à la suite des autres, séparées par des virgules (une nouvelle série de données arrive toutes les 5 minutes). 
-Le bloc *pythonshell* permet d'exécuter le code Python indiqué dans les réglages du bloc (:warning: écrire le chemin complet si le fichier .py n'est pas dans le même répertoire que le flow).
-Le bloc *function* sépare les trois données et les renvoie chacune sur la sortie adéquate.
+Le bloc `pythonshell` permet d'exécuter le code Python indiqué dans les réglages du bloc (:warning: écrire le chemin complet si le fichier .py n'est pas dans le même répertoire que le flow).
+Le bloc `function` sépare les trois données et les renvoie chacune sur la sortie adéquate.
 
 - **Demande de salle**
-L'utilisateur remplit dans un formulaire les **critères** de sa recherche de salle. Le bloc *function* ajoute l'identifiant de la salle au message, puis la requête est envoyée au serveur.
+L'utilisateur remplit dans un formulaire les **critères** de sa recherche de salle. Le bloc `function` ajoute l'identifiant de la salle au message, puis la requête est envoyée au serveur.
 
 - **Salles disponibles**
-En réponse à la requête, le serveur renvoie une proposition de salle (rendue lisible par le bloc *json*). La proposition est affichée à l'écran. Si aucune salle remplissant les critères de recherche n'est disponible, l'information est aussi affichée sur l'écran.
+En réponse à la requête, le serveur renvoie une proposition de salle (rendue lisible par le bloc `json`). La proposition est affichée à l'écran. Si aucune salle remplissant les critères de recherche n'est disponible, l'information est aussi affichée sur l'écran.
 
 - **Occuper la salle**
 Si la salle est libre, l'utilisateur peut la prendre en cliquant sur le bouton *prendre la salle*. Il est redirigé vers une page où il lui est demandé d'indiquer la durée pendant laquelle il compte occuper la salle (notons qu'aucune sécurité n'a été mise en place pour éviter que l'utilisateur indique une durée qui empièterait sur un créneau réservé, la personne ayant réservé ayant toute légitimité à récupérer la salle à l'heure qu'elle a demandé). Pour faciliter le traitement, on demande à l'utilisateur d'indiquer la durée en utilisant deux chiffres pour les heures, deux points, puis deux chiffres pour les minutes.
-La chaîne de caractères récupérées est convertie en un nombre de minutes par le noeud *function* (qui en même temps ajoute l'identifiant de la salle au message). Le message obtenu est envoyé au serveur par websocket.
-Par ailleurs, un autre noeud *function* déclenche le passage de *global.payload* à "occupée", et envoie la durée d'occupation à un noeud *delay* qui déclenche le passage de *global.payload* à libre à la fin de la durée d'occupation indiquée par l'utilisateur.
+La chaîne de caractères récupérées est convertie en un nombre de minutes par le noeud `function` (qui en même temps ajoute l'identifiant de la salle au message). Le message obtenu est envoyé au serveur par websocket.
+Par ailleurs, un autre noeud `function` déclenche le passage de `global.payload` à "occupée", et envoie la durée d'occupation à un noeud `delay` qui déclenche le passage de `global.payload` à libre à la fin de la durée d'occupation indiquée par l'utilisateur.
 
 - **Emploi du temps**
-L'emploi du temps est envoyé par le serveur toutes les 15 minutes. Il est converti en string par un noeud *json* pour être traité par un noeud *function* qui le formate pour être lu par le noeud *table*. L'emploi du temps formaté est aussi envoyé à un autre noeud *function* qui compare les créneaux de réservation de l'emploi du temps à l'heure courante pour déterminer le statut de la salle.
+L'emploi du temps est envoyé par le serveur toutes les 15 minutes. Il est converti en string par un noeud `json` pour être traité par un noeud `function` qui le formate pour être lu par le noeud `table`. L'emploi du temps formaté est aussi envoyé à un autre noeud `function` qui compare les créneaux de réservation de l'emploi du temps à l'heure courante pour déterminer le statut de la salle.
 
 ### Points de vigilance
 - Il est nécessaire d'envoyer l'identifiant de la salle au démarrage et à chaque requête 
-:arrow_right: pour cela, il faut veiller pour chaque nouvelle tablette à indiquer la salle à laquelle elle correspond dans les noeuds *function* des fonctionnalités "identification", "demande de salle", et "récupération de salle", ainsi que sur le bouton de l'écran "basique".
-- Bien indiquer le chemin pour accéder au fichier .py dans les noeuds *pythonshell*.
-- Indiquer l'adresse du serveur dans les noeuds de communication *websocket in* et *websocket out*.
+:arrow_right: pour cela, il faut veiller pour chaque nouvelle tablette à indiquer la salle à laquelle elle correspond dans les noeuds `function` des fonctionnalités "identification", "demande de salle", et "récupération de salle", ainsi que sur le bouton de l'écran "basique".
+- Bien indiquer le chemin pour accéder au fichier .py dans les noeuds `pythonshell`.
+- Indiquer l'adresse du serveur dans les noeuds de communication `websocket in` et `websocket out`.
