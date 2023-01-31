@@ -1,0 +1,3043 @@
+[
+    {
+        "id": "735ce522855463f2",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d430b7f786c3430c",
+        "type": "ui_form",
+        "z": "735ce522855463f2",
+        "name": "",
+        "label": "Recherche de salle",
+        "group": "79d922bc751f5f97",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "options": [
+            {
+                "label": "capacité",
+                "value": "cap",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "durée (hh:mm)",
+                "value": "dur",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "tableau blanc",
+                "value": "tabb",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "tableau noir",
+                "value": "tabn",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "vidéoprojecteur",
+                "value": "videop",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "télévision",
+                "value": "tele",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "cap": "",
+            "dur": "",
+            "tabb": false,
+            "tabn": false,
+            "videop": false,
+            "tele": false
+        },
+        "payload": "",
+        "submit": "rechercher",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "x": 130,
+        "y": 1220,
+        "wires": [
+            [
+                "676d5655542df1d3",
+                "98bbb686b59ef7f8"
+            ]
+        ]
+    },
+    {
+        "id": "e3774ca61f8a5c91",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "cabfe69863551152",
+        "order": 10,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Chercher une salle",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1190,
+        "y": 540,
+        "wires": [
+            [
+                "3e559b26333add73"
+            ]
+        ]
+    },
+    {
+        "id": "3e559b26333add73",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1400,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51aec549663874f4",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 560,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "27a0b7e669e1c1e0",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "retour accueil",
+        "group": "94b8bf3298c668c4",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "undo",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 360,
+        "y": 1180,
+        "wires": [
+            [
+                "0c569da6d07d9770"
+            ]
+        ]
+    },
+    {
+        "id": "fd5c9502351eb67a",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "retour accueil",
+        "group": "0cc5b1248ffc1a26",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "retour accueil",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 920,
+        "y": 1260,
+        "wires": [
+            [
+                "5be158a8704a8c1d"
+            ]
+        ]
+    },
+    {
+        "id": "5be158a8704a8c1d",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1080,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f720609b65218d0b",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "676d5655542df1d3",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "3",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 1220,
+        "wires": [
+            [
+                "51aec549663874f4"
+            ]
+        ]
+    },
+    {
+        "id": "b214fe9a5ceae911",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "a1fce82c8d27218b",
+        "order": 1,
+        "width": 14,
+        "height": 8,
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{msg.topic}}",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1250,
+        "y": 340,
+        "wires": [
+            [
+                "e189dc6a2871e8b2",
+                "79eb3c11c5c4c045"
+            ]
+        ]
+    },
+    {
+        "id": "e189dc6a2871e8b2",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1840,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7a2140274d2918e",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "Récupérer salle/fun",
+        "group": "cabfe69863551152",
+        "order": 11,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1190,
+        "y": 260,
+        "wires": [
+            [
+                "1e2204a357153bd5"
+            ]
+        ]
+    },
+    {
+        "id": "269cb5fb583a86ec",
+        "type": "websocket out",
+        "z": "735ce522855463f2",
+        "name": "",
+        "server": "e95ac9c8f97d8aa3",
+        "client": "",
+        "x": 600,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "f37f40653c9b481e",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Demande de salle",
+        "info": "websocket pour envoyer les critères de choix de salle + changement statut salle et pour quelle durée\n",
+        "x": 130,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "da308640244b2435",
+        "type": "websocket in",
+        "z": "735ce522855463f2",
+        "name": "réception d'info",
+        "server": "e95ac9c8f97d8aa3",
+        "client": "",
+        "x": 160,
+        "y": 760,
+        "wires": [
+            [
+                "bb8763b9f98b42fb"
+            ]
+        ]
+    },
+    {
+        "id": "98bbb686b59ef7f8",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "id salle",
+        "func": "msg.payload[\"id\"] = global.get(\"id\");\nmsg.payload[\"requete\"] = \"recherche de salle\";\nvar decompo = msg.payload[\"dur\"].split(\":\", 2);\nvar duree = parseInt(decompo[0]) * 60 + parseInt(decompo[1]);\nmsg.payload[\"dur\"] = duree;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1260,
+        "wires": [
+            [
+                "269cb5fb583a86ec",
+                "f720609b65218d0b"
+            ]
+        ]
+    },
+    {
+        "id": "ca64a9095cd941fd",
+        "type": "websocket out",
+        "z": "735ce522855463f2",
+        "name": "",
+        "server": "e95ac9c8f97d8aa3",
+        "client": "",
+        "x": 360,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "ab20cd05002a73f0",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 08 * * *",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "ea9e3b178d029e0c"
+            ]
+        ]
+    },
+    {
+        "id": "5d2d80f29d47658e",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Identification",
+        "info": "Envoie le nom de la salle au serveur tous les matins à 8h",
+        "x": 110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fe965f8ce9362269",
+        "type": "ui_form",
+        "z": "735ce522855463f2",
+        "name": "squatter",
+        "label": "Temps d'occupation de la salle",
+        "group": "0124f391714d0602",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "options": [
+            {
+                "label": "format hh:mm",
+                "value": "duree",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "duree": ""
+        },
+        "payload": "",
+        "submit": "prendre la salle",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 900,
+        "y": 740,
+        "wires": [
+            [
+                "51acaee0b4720afb",
+                "8979f8c6a22c670d",
+                "d0d4e68128df2c89",
+                "660b636d894cceda",
+                "baa7817ae828b8b2",
+                "9bf9b49b4b06fcdf"
+            ]
+        ]
+    },
+    {
+        "id": "51acaee0b4720afb",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 760,
+        "wires": [
+            [
+                "dde8b7c512cca726"
+            ]
+        ]
+    },
+    {
+        "id": "dde8b7c512cca726",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1260,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fbd8182f524788b9",
+        "type": "ui_text",
+        "z": "735ce522855463f2",
+        "group": "0cc5b1248ffc1a26",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Salle proposée :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1560,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "67d043d1d9bbe61c",
+        "type": "switch",
+        "z": "735ce522855463f2",
+        "name": "disjonction libre/réservée",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "libre",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "réservée",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 400,
+        "wires": [
+            [
+                "e15f5a366de67162",
+                "c823dd4dc5245976",
+                "b1654e2713793a36",
+                "572424765f6ac5e1"
+            ],
+            [
+                "baa7817ae828b8b2",
+                "a1527557f313184c",
+                "bb4888a504f8b4a2",
+                "1945dc96924bb223"
+            ]
+        ]
+    },
+    {
+        "id": "660b636d894cceda",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "bouton orange",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "orange",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 340,
+        "wires": [
+            [
+                "b214fe9a5ceae911"
+            ]
+        ]
+    },
+    {
+        "id": "c823dd4dc5245976",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "bouton vert",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "green",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 380,
+        "wires": [
+            [
+                "b214fe9a5ceae911"
+            ]
+        ]
+    },
+    {
+        "id": "e15f5a366de67162",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "bouton récupérer",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Récupérer la salle",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Récupérer la salle",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 300,
+        "wires": [
+            [
+                "d7a2140274d2918e"
+            ]
+        ]
+    },
+    {
+        "id": "baa7817ae828b8b2",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "bouton fun",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Surprise",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Surprise",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 260,
+        "wires": [
+            [
+                "d7a2140274d2918e"
+            ]
+        ]
+    },
+    {
+        "id": "7b0ac46e9f441a7b",
+        "type": "ui_text",
+        "z": "735ce522855463f2",
+        "group": "cabfe69863551152",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Statut",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1090,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d0d4e68128df2c89",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "occupée",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Occupée",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 460,
+        "wires": [
+            [
+                "7b0ac46e9f441a7b"
+            ]
+        ]
+    },
+    {
+        "id": "b1654e2713793a36",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "libre",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Libre",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 500,
+        "wires": [
+            [
+                "7b0ac46e9f441a7b"
+            ]
+        ]
+    },
+    {
+        "id": "2e323e3df307bc04",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "retour ecran de base",
+        "group": "cabfe69863551152",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "undo",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1200,
+        "y": 580,
+        "wires": [
+            [
+                "573acbde0a222923"
+            ]
+        ]
+    },
+    {
+        "id": "573acbde0a222923",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1380,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b4fb36f04343e0f",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "retour accueil",
+        "group": "621e648c1a918dbf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "undo",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 920,
+        "y": 820,
+        "wires": [
+            [
+                "1df7908081b22e86"
+            ]
+        ]
+    },
+    {
+        "id": "1df7908081b22e86",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1100,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb8763b9f98b42fb",
+        "type": "json",
+        "z": "735ce522855463f2",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 330,
+        "y": 760,
+        "wires": [
+            [
+                "d89b0b0a75218435",
+                "1f670dec3ed95f68"
+            ]
+        ]
+    },
+    {
+        "id": "d89b0b0a75218435",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "8979f8c6a22c670d",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "envoi prise de salle",
+        "func": "var decomp = msg.payload[\"duree\"].split(\":\",2);\nvar temps = parseInt(decomp[0])*60+parseInt(decomp[1]);\nmsg.payload[\"requete\"] = \"prise de salle\";\nmsg.payload[\"id\"] = global.get(\"id\");\nmsg.payload[\"duree\"] = temps;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 720,
+        "wires": [
+            [
+                "11c9637b09a80f34",
+                "848fb6b79aaf456c"
+            ]
+        ]
+    },
+    {
+        "id": "11c9637b09a80f34",
+        "type": "websocket out",
+        "z": "735ce522855463f2",
+        "name": "",
+        "server": "e95ac9c8f97d8aa3",
+        "client": "",
+        "x": 1400,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "adae5fb55d31f1f7",
+        "type": "ui_gauge",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "cabfe69863551152",
+        "order": 1,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Température",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "f558509fccf22068",
+        "type": "ui_gauge",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "cabfe69863551152",
+        "order": 8,
+        "width": 4,
+        "height": 3,
+        "gtype": "wave",
+        "title": "Humidité",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 660,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "756a72ea2f3f0ca2",
+        "type": "ui_gauge",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "cabfe69863551152",
+        "order": 6,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "CO2",
+        "label": "ppm",
+        "format": "{{value}}",
+        "min": "300",
+        "max": "1500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "800",
+        "seg2": "1200",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "74d54b75be207696",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "lecture données capteurs",
+        "func": "var output = [null, null, null];\nvar values = msg.payload.split(\",\",3);\noutput[0] = { payload: values[0] };\noutput[1] = { payload: values[1] };\noutput[2] = { payload: values[2] };\nreturn output;\n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1060,
+        "wires": [
+            [
+                "adae5fb55d31f1f7",
+                "cd989a69fb6004ed"
+            ],
+            [
+                "f558509fccf22068"
+            ],
+            [
+                "756a72ea2f3f0ca2"
+            ]
+        ]
+    },
+    {
+        "id": "cd989a69fb6004ed",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "ac9ee1098462bdc3",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "99e78b779a6455d2",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Emploi du temps",
+        "info": "",
+        "x": 100,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "f45c76f1f1dd0d35",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Page de salles dispo",
+        "info": "",
+        "x": 930,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "2122b9a51b8b47c4",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "page récupération de salle",
+        "info": "",
+        "x": 1130,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "05ac4901beafce1a",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Affichage infos capteurs",
+        "info": "",
+        "x": 140,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "02ac2fdc628cf7cf",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "consigne",
+        "info": "si on reçoit une chaîne de caractère vide comme réponse, c'est qu'aucune salle n'est dispo",
+        "x": 1140,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "a248aae892aacb1c",
+        "type": "websocket in",
+        "z": "735ce522855463f2",
+        "name": "",
+        "server": "e95ac9c8f97d8aa3",
+        "client": "",
+        "x": 970,
+        "y": 1200,
+        "wires": [
+            [
+                "3055c027a168dac6"
+            ]
+        ]
+    },
+    {
+        "id": "3055c027a168dac6",
+        "type": "json",
+        "z": "735ce522855463f2",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1190,
+        "y": 1200,
+        "wires": [
+            [
+                "1d78288cdbabc596"
+            ]
+        ]
+    },
+    {
+        "id": "1d78288cdbabc596",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "salle attribuée",
+        "func": "if(msg.payload[\"requete\"]==\"salle\"){\n    var room = msg.payload[\"id\"];\n    if (room){\n        msg.payload = room;\n        return msg;\n    }\n    else{\n        msg.payload = \"Aucune salle de ce type n'est disponible\";\n        return msg;\n    }\n}\nelse{\n    msg.payload = \"Pas de réponse du serveur\";\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 1200,
+        "wires": [
+            [
+                "eea2d37f4a5d4427",
+                "fbd8182f524788b9"
+            ]
+        ]
+    },
+    {
+        "id": "848fb6b79aaf456c",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "86d8411a31765181",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Changer couleur en fonction réservation",
+        "info": "",
+        "x": 170,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a1527557f313184c",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "bouton rouge",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "red",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 420,
+        "wires": [
+            [
+                "b214fe9a5ceae911"
+            ]
+        ]
+    },
+    {
+        "id": "bb4888a504f8b4a2",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "réservée",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Réservée",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 540,
+        "wires": [
+            [
+                "7b0ac46e9f441a7b"
+            ]
+        ]
+    },
+    {
+        "id": "caf605b958c6aca5",
+        "type": "delay",
+        "z": "735ce522855463f2",
+        "name": "delay",
+        "pauseType": "delayv",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 670,
+        "y": 560,
+        "wires": [
+            [
+                "b1654e2713793a36",
+                "c823dd4dc5245976",
+                "e15f5a366de67162",
+                "0504c804c76650c6"
+            ]
+        ]
+    },
+    {
+        "id": "9bf9b49b4b06fcdf",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "temps d'occupation",
+        "func": "var decomp = msg.payload[\"duree\"].split(\":\", 2);\nmsg.delay = (parseInt(decomp[0]) * 60 + parseInt(decomp[1]))*1000*60;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 660,
+        "wires": [
+            [
+                "caf605b958c6aca5",
+                "d83584cd6133b456",
+                "4edb71266316446a"
+            ]
+        ]
+    },
+    {
+        "id": "4f3857bca0b9b4f1",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Afficher si réservée",
+        "info": "idée : convertir les heures de début et de fin \nen timestamp\npour pouvoir comparer avec le timestamps de nao\n--> va falloir un inject timestamp assez fréquemment\n",
+        "x": 210,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "cea588474b71ea35",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "bascule statut libre/réservée",
+        "func": "var n = msg.payload.length;\n\nvar events = [];\nvar deb0 = 0;\nvar deb = 0;\nvar fin0 = 0;\nvar fin = 0;\n\n//liste des débuts et fin d'événements en secondes\nfor (let i = 0; i < n; i++) {\n    deb0 = msg.payload[i][\"debut\"].split(\":\");\n    deb = parseInt(deb0[0])*3600 + parseInt(deb0[1])*60;\n    fin0 = msg.payload[i][\"fin\"].split(\":\");\n    fin = parseInt(fin0[0]) * 3600 + parseInt(fin0[1]) * 60;\n    events.push([deb, fin]);\n};\n\n//calcul de l'instant présent en secondes\nvar d = new Date().toString().split(\" \")[4];\nvar time = d.split(\":\");\nvar instant = parseInt(time[0])*3600 \n    + parseInt(time[1])*60 \n    + parseInt(time[2]);\n\n//on regarde si la salle est réservée et on affiche en fonction\nfor (let i = 0; i<n; i++) {\n    if (instant < events[i][1]) {\n        if (instant > events[i][0]) {\n            msg.payload = \"réservée\";\n            return msg;\n        }\n        else {\n            if (global.payload == \"libre\"){\n                msg.payload = \"libre\";\n                return msg;\n            }\n\n        }\n    }\n};\n\n//si on a dépassé le dernier créneau réservé\nif (global.payload == \"libre\"){\n    msg.payload = \"libre\";\n    return msg;\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 640,
+        "wires": [
+            [
+                "72b066f741ccfe86",
+                "67d043d1d9bbe61c"
+            ]
+        ]
+    },
+    {
+        "id": "72b066f741ccfe86",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "e53d09cfc7a87c7d",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "1f670dec3ed95f68",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "emploi du temps",
+        "func": "var n = msg.payload[\"reservations\"].length;\n\nvar reservation=[];\nfor (let i = 0; i<n; i++){\n    reservation.push({\n        \"debut\" : msg.payload[\"reservations\"][i][\"from_\"],\n        \"fin\": msg.payload[\"reservations\"][i][\"to\"],\n        \"event\": msg.payload[\"reservations\"][i][\"title\"]\n    });\n};\nmsg.payload = reservation;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 760,
+        "wires": [
+            [
+                "62ac0c3172bbac95",
+                "e53d09cfc7a87c7d",
+                "cea588474b71ea35"
+            ]
+        ]
+    },
+    {
+        "id": "62ac0c3172bbac95",
+        "type": "ui_table",
+        "z": "735ce522855463f2",
+        "group": "cabfe69863551152",
+        "name": "",
+        "order": 7,
+        "width": 6,
+        "height": 3,
+        "columns": [
+            {
+                "field": "debut",
+                "title": "Début",
+                "width": "25%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "fin",
+                "title": "Fin",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "event",
+                "title": "Evénement",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 670,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "de9cb072c3c7b62d",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "page surprise",
+        "info": "",
+        "x": 970,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "5d74e298187b34ce",
+        "type": "ui_text",
+        "z": "735ce522855463f2",
+        "group": "83a7753a86b1e439",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "name": "petit texte mignon",
+        "label": "La salle n'est pas libre, mais voici un petit soleil pour illuminer votre journée",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 970,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "a74b3990cc23b3b4",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1140,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22f89f6ab05c3b1a",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "soleil",
+        "group": "83a7753a86b1e439",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "wi-wu-sunny",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 970,
+        "y": 1000,
+        "wires": [
+            [
+                "a74b3990cc23b3b4"
+            ]
+        ]
+    },
+    {
+        "id": "d83584cd6133b456",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "global to \"occupee\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "global",
+                "to": "occupee",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0504c804c76650c6",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "global to \"libre\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "global",
+                "to": "libre",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "572424765f6ac5e1",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "global to \"libre\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "global",
+                "to": "libre",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1945dc96924bb223",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "global to \"reservee\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "global",
+                "to": "reservee",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d00b08f05a3e957b",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 15",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9d3f9233edd18f2c",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "payload",
+        "payloadType": "global",
+        "x": 810,
+        "y": 80,
+        "wires": [
+            [
+                "a45529d1e0841331"
+            ]
+        ]
+    },
+    {
+        "id": "a45529d1e0841331",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 16",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1e2204a357153bd5",
+        "type": "switch",
+        "z": "735ce522855463f2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "libre",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1350,
+        "y": 260,
+        "wires": [
+            [
+                "4f79fe835afbed51"
+            ],
+            [
+                "29eb9a70439086f1"
+            ]
+        ]
+    },
+    {
+        "id": "4f79fe835afbed51",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "4",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1500,
+        "y": 240,
+        "wires": [
+            [
+                "d72544c34eb22042"
+            ]
+        ]
+    },
+    {
+        "id": "29eb9a70439086f1",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "5",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1500,
+        "y": 280,
+        "wires": [
+            [
+                "96e9a8668eb6afe8"
+            ]
+        ]
+    },
+    {
+        "id": "eea2d37f4a5d4427",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "d72544c34eb22042",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1680,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96e9a8668eb6afe8",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 1680,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4edb71266316446a",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 18",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "9ba367e3f161e7a2",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "libre",
+        "payloadType": "str",
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "67d043d1d9bbe61c"
+            ]
+        ]
+    },
+    {
+        "id": "8a80da0137f938a7",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1260,
+        "y": 1280,
+        "wires": [
+            [
+                "1d78288cdbabc596"
+            ]
+        ]
+    },
+    {
+        "id": "97c5abab223c4cbe",
+        "type": "pythonshell in",
+        "z": "735ce522855463f2",
+        "name": "capteur IR",
+        "pyfile": "C:\\\\Users\\\\Lucie\\\\Desktop\\\\mines_\\\\2A\\\\IDS\\\\projet_oasis\\\\test_ir.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1390,
+        "y": 440,
+        "wires": [
+            [
+                "2ead5079f7f62f54",
+                "26cd273d37201a30"
+            ]
+        ]
+    },
+    {
+        "id": "2ead5079f7f62f54",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 19",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "9ace702f6b8522e3",
+        "type": "pythonshell in",
+        "z": "735ce522855463f2",
+        "name": "données capteurs",
+        "pyfile": "C:\\\\Users\\\\Lucie\\\\Desktop\\\\mines_\\\\2A\\\\IDS\\\\projet_oasis\\\\donnees_capt.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 190,
+        "y": 1060,
+        "wires": [
+            [
+                "ac9ee1098462bdc3",
+                "74d54b75be207696"
+            ]
+        ]
+    },
+    {
+        "id": "26cd273d37201a30",
+        "type": "switch",
+        "z": "735ce522855463f2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "True",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "False",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1550,
+        "y": 440,
+        "wires": [
+            [
+                "79eb3c11c5c4c045",
+                "2ad021023bf1e4bf"
+            ],
+            [
+                "94e4f5eaf3331770",
+                "1a72fce95e8dac03"
+            ]
+        ]
+    },
+    {
+        "id": "94e4f5eaf3331770",
+        "type": "delay",
+        "z": "735ce522855463f2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1600,
+        "y": 540,
+        "wires": [
+            [
+                "97c5abab223c4cbe"
+            ]
+        ]
+    },
+    {
+        "id": "79eb3c11c5c4c045",
+        "type": "delay",
+        "z": "735ce522855463f2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1820,
+        "y": 480,
+        "wires": [
+            [
+                "97c5abab223c4cbe"
+            ]
+        ]
+    },
+    {
+        "id": "2ad021023bf1e4bf",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1840,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6af13d85107ccd0e",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 2020,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a72fce95e8dac03",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1840,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01d268754624c8a9",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1210,
+        "y": 440,
+        "wires": [
+            [
+                "97c5abab223c4cbe"
+            ]
+        ]
+    },
+    {
+        "id": "ed0507c32cf279b4",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1000,
+        "wires": [
+            [
+                "9ace702f6b8522e3"
+            ]
+        ]
+    },
+    {
+        "id": "e2473fc088b638db",
+        "type": "ui_template",
+        "z": "735ce522855463f2",
+        "group": "79d922bc751f5f97",
+        "name": "Virtual Keyboard",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div id=\"empty\"></div>\n<button class=\"VK\">V-KeyBoard On</button>\n\n<!-- The Modal -->\n<div id=\"myModal\" class=\"modal\">\n\n  <!-- Modal content -->\n  <div class=\"modal-content\">\n      <div class=\"modal-header\">\n      <span class=\"close\" onclick=\"closeModal()\">&times;</span>\n      <h2 id=\"vkeyname\" style=\"background-color: aliceblue !important; color: black !important; text-align: center; min-height: 30px;\">V-Keyboard</h2>\n    </div>\n    <div class=\"modal-body\">\n        <div id=\"keyboard\"></div>\n        <div>\n        </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.VK{\n    position: fixed;\n    top: 60px;\n    right: 20px;\n    height: 30px;\n}\n</style>\n\n<script>\n\nvar clickState = 1;\nvar btn = document.querySelector('.VK');\n\nbtn.addEventListener('click', function(){\n\n  if (clickState == 0) {\n    this.textContent = 'V-KeyBoard On';\n    modal = document.getElementById('myModal');\n    clickState = 1;\n  } else {\n    this.textContent = 'V-KeyBoard Off';\n    modal = document.getElementById('empty');\n    clickState = 0;\n  }\n\n});\n</script>\n\n<script>\n    // Get the modal\nvar modal = document.getElementById('myModal');\nvar inputTags;\nvar inputType;\nvar inputTarget;\n\nvar getinputs = function() {\n    inputTags = document.getElementsByTagName(\"input\");\n    console.log(inputTags)\n    for (var i = 0; i < inputTags.length; i++) {\n        inputTags[i].addEventListener('click', openModal, false)\n    }\n}\n\nsetTimeout(function(){ getinputs(); }, 1000);\n\nvar openModal = function() {\n    inputType = event.target.type\n    inputTarget = event.target\n    var layoutName;\n    if (inputType == \"number\"){\n        //inputTarget.type = \"number\" //hack because chrome doesn't allow setselection in number inputs\n        //inputTarget.value = \"\"\n        layoutName = \"numbers_only\"\n    }else{\n        layoutName = \"english\"\n    }\n    $('#vkeyname').text(event.target.value)\n    $('#keyboard').unbind().removeData();\n    modal.style.display = \"block\";\n    $('#keyboard').jkeyboard({\n        layout: layoutName,\n        input: $('#'+$(this).attr('id'))\n    });\n}\n\n\n// Get the <span> element that closes the modal\nvar span = document.getElementsByClassName(\"close\")[0];\n\n// When the user clicks anywhere outside of the modal, close it\nwindow.onclick = function(event) {\n    var source = event.target;\n    if (source == modal || source == span) {\n        closeModal(source)\n    }\n};\n\nvar closeModal = function(source){\n    //console.log(\"closing\")\n    modal.style.display = \"none\";\n   \n    if (inputType == \"number\"){\n        inputTarget.type = \"number\" //hack because chrome doesn't allow selectionstart on number inputs\n    }\n}\n\n    \n// the semi-colon before function invocation is a safety net against concatenated\n// scripts and/or other plugins which may not be closed properly.\n; (function ($, window, document, undefined) {\n\n    // undefined is used here as the undefined global variable in ECMAScript 3 is\n    // mutable (ie. it can be changed by someone else). undefined isn't really being\n    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined\n    // can no longer be modified.\n\n    // window and document are passed through as local variable rather than global\n    // as this (slightly) quickens the resolution process and can be more efficiently\n    // minified (especially when both are regularly referenced in your plugin).\n\n    // Create the defaults once\n    var pluginName = \"jkeyboard\",\n        defaults = {\n            layout: \"english\",\n            input: $('#input'),\n            customLayouts: {\n                selectable: []\n            },\n        };\n\n\n    var function_keys = {\n        backspace: {\n            text: 'DEL',\n        },\n        return: {\n            text: 'Enter'\n        },\n        shift: {\n            text: 'Shift'\n        },\n        space: {\n            text: 'Space'\n        },\n        numeric_switch: {\n            text: '123',\n            command: function () {\n                this.createKeyboard('numeric');\n                this.events();\n            }\n        },\n        layout_switch: {\n            text: '<i class=\"fa fa-keyboard-o\" aria-hidden=\"true\"></i>',\n            command: function () {\n                var l = this.toggleLayout();\n                this.createKeyboard(l);\n                this.events();\n            }\n        },\n        character_switch: {\n            text: 'ABC',\n            command: function () {\n                this.createKeyboard(layout);\n                this.events();\n            }\n        },\n        symbol_switch: {\n            text: '#+=',\n            command: function () {\n                this.createKeyboard('symbolic');\n                this.events();\n            }\n        }\n    };\n\n\n    var layouts = {\n        selectable: ['english', 'russian','french', 'emoji'],\n        english: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        russian: [\n            ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х'],\n            ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],\n            ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        french: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l','à','ç'],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm','é','è', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        emoji: [\n            ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊',],\n            ['😋', '😎', '😍', '😘', '❤️', '🙏', '🔥', '✨', '👍','👌','💯'],\n            ['🤷', '🎉', '👏', '🤦', '🙌', '🎶', '💥', '🌈','✅','⭐', '👀'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],            \n        numeric: [\n            ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],\n            ['-', '/', ':', ';', '(', ')', '$', '&', '@', '\"'],\n            ['symbol_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n        ],\n        numbers_only: [\n            ['1', '2', '3',],\n            ['4', '5', '6',],\n            ['7', '8', '9',],\n            ['0', 'backspace', 'return'],\n        ],\n        symbolic: [\n            ['[', ']', '{', '}', '#', '%', '^', '*', '+', '='],\n            ['_', '\\\\', '|', '~', '<', '>'],\n            ['numeric_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n\n        ]\n    }\n\n    var shift = false, capslock = false, layout = 'english', layout_id = 0;\n\n    // The actual plugin constructor\n    function Plugin(element, options) {\n        this.element = element;\n        // jQuery has an extend method which merges the contents of two or\n        // more objects, storing the result in the first object. The first object\n        // is generally empty as we don't want to alter the default options for\n        // future instances of the plugin\n        this.settings = $.extend({}, defaults, options);\n        // Extend & Merge the cusom layouts\n        layouts = $.extend(true, {}, this.settings.customLayouts, layouts);\n        if (Array.isArray(this.settings.customLayouts.selectable)) {\n            $.merge(layouts.selectable, this.settings.customLayouts.selectable);\n        }\n        this._defaults = defaults;\n        this._name = pluginName;\n        this.init();\n    }\n\n    Plugin.prototype = {\n        init: function () {\n            layout = this.settings.layout;\n            this.createKeyboard(layout);\n            this.events();\n        },\n\n        setInput: function (newInputField) {\n            this.settings.input = newInputField;\n        },\n\n        createKeyboard: function (layout) {\n            shift = false;\n            capslock = false;\n\n            var keyboard_container = $('<ul/>').addClass('jkeyboard'),\n                me = this;\n\n            layouts[layout].forEach(function (line, index) {\n                var line_container = $('<li/>').addClass('jline');\n                line_container.append(me.createLine(line));\n                keyboard_container.append(line_container);\n            });\n\n            $(this.element).html('').append(keyboard_container);\n        },\n\n        createLine: function (line) {\n            var line_container = $('<ul/>');\n\n            line.forEach(function (key, index) {\n                var key_container = $('<li/>').addClass('jkey').data('command', key);\n\n                if (function_keys[key]) {\n                    key_container.addClass(key).html(function_keys[key].text);\n                }\n                else {\n                    key_container.addClass('letter').html(key);\n                }\n\n                line_container.append(key_container);\n            })\n\n            return line_container;\n        },\n\n        events: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift'),\n                space_key = $(this.element).find('.space'),\n                backspace_key = $(this.element).find('.backspace'),\n                return_key = $(this.element).find('.return'),\n\n                me = this,\n                fkeys = Object.keys(function_keys).map(function (k) {\n                    return '.' + k;\n                }).join(',');\n\n            letters.on('click', function () {\n                me.type((shift || capslock) ? $(this).text().toUpperCase() : $(this).text());\n            });\n\n            space_key.on('click', function () {\n                me.type(' ');\n            });\n\n            return_key.on('click', function () {\n                me.enter();\n            });\n\n            backspace_key.on('click', function () {\n                me.backspace();\n            });\n\n            shift_key.on('click', function () {\n                if (capslock) {\n                    me.toggleShiftOff();\n                    capslock = false;\n                } else {\n                    me.toggleShiftOn();\n                }\n            }).on('dblclick', function () {\n                capslock = true;\n            });\n\n\n            $(fkeys).on('click', function () {\n                var command = function_keys[$(this).data('command')].command;\n                if (!command) return;\n\n                command.call(me);\n            });\n        },\n\n        type: function (key) {\n            var input = this.settings.input,\n                val = input.val(),\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n\n            var max_length = $(input).attr(\"maxlength\");\n            if (start == end && end == val.length) {\n                if (!max_length || val.length < max_length) {\n                    input.val(val + key);\n                    input.change()\n                    $('#vkeyname').text(val + key)\n                }\n            } else {\n                if (input_node.type == \"text\"){\n                    var new_string = this.insertToString(start, end, val, key);\n                    input.val(new_string);\n                    start++;\n                    end = start;\n                    input_node.setSelectionRange(start, end);\n                    input.change()\n                }else if (input_node.type == \"number\"){\n                    input.val(val + key);\n                }else{\n                    input.val(val + key);\n                    input.change()\n                }\n                $('#vkeyname').text(val + key)\n                \n            }\n            input.trigger('focus');\n\n            if (shift && !capslock) {\n                this.toggleShiftOff();\n            }\n        },\n        \n        enter: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input_node.type == \"text\"){\n                val = val + \"\\n\";\n                $('#vkeyname').text(val)\n            }\n            input.change()\n            input.focus()\n            if (input_node.type == \"number\"){\n                modal.style.display = \"none\";\n            }\n        },\n\n        backspace: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input.type == \"text\"){\n                input.val(val.slice(0, start-1) + val.slice(start))\n                input_node.setSelectionRange(start-1, start-1);\n                //console.log(val)\n                $('#vkeyname').text(val)\n            }else{\n                input.val(val.slice(0,-1))\n                $('#vkeyname').text(val.slice(0,-1))\n            }\n            //input.change()\n            //input.focus()\n        },\n\n        toggleShiftOn: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.addClass('uppercase');\n            shift_key.addClass('active')\n            shift = true;\n        },\n\n        toggleShiftOff: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.removeClass('uppercase');\n            shift_key.removeClass('active');\n            shift = false;\n        },\n\n        toggleLayout: function () {\n            layout_id = layout_id || 0;\n            var plain_layouts = layouts.selectable;\n            layout_id++;\n\n            var current_id = layout_id % plain_layouts.length;\n            var SelectedLayoutName = plain_layouts[current_id];\n            $('#vkeyname').text('V-Keyboard ' + SelectedLayoutName )\n            return plain_layouts[current_id];\n        },\n\n        insertToString: function (start, end, string, insert_string) {\n            return string.substring(0, start) + insert_string + string.substring(end, string.length);\n        }\n    };\n\n        /*\n\t\t// A really lightweight plugin wrapper around the constructor,\n\t\t// preventing against multiple instantiations\n\t\t$.fn[ pluginName ] = function ( options ) {\n\t\t\t\treturn this.each(function() {\n\t\t\t\t\t\tif ( !$.data( this, \"plugin_\" + pluginName ) ) {\n\t\t\t\t\t\t\t\t$.data( this, \"plugin_\" + pluginName, new Plugin( this, options ) );\n\t\t\t\t\t\t}\n\t\t\t\t});\n\t\t};\n        */\n        var methods = {\n            init: function(options) {\n                if (!this.data(\"plugin_\" + pluginName)) {\n                    this.data(\"plugin_\" + pluginName, new Plugin(this, options));\n                }\n            },\n\t\t\tsetInput: function(content) {\n\t\t\t\tthis.data(\"plugin_\" + pluginName).setInput($(content));\n            },\n            setLayout: function(layoutname) {\n                // change layout if it is not match current\n                object = this.data(\"plugin_\" + pluginName);\n                if (typeof(layouts[layoutname]) !== 'undefined' && object.settings.layout != layoutname) {\n                    object.settings.layout = layoutname;\n                    object.createKeyboard(layoutname);\n                    object.events();\n                };\n            },\n        };\n\n\t\t$.fn[pluginName] = function (methodOrOptions) {\n            if (methods[methodOrOptions]) {\n                return methods[methodOrOptions].apply(this.first(), Array.prototype.slice.call( arguments, 1));\n            } else if (typeof methodOrOptions === 'object' || ! methodOrOptions) {\n                // Default to \"init\"\n                return methods.init.apply(this.first(), arguments);\n            } else {\n                $.error('Method ' +  methodOrOptions + ' does not exist on jQuery.tooltip');\n            }\n        };\n\n})(jQuery, window, document);\n</script>\n\n<style>\nbody {font-family: Arial, Helvetica, sans-serif;}\n\n.nr-dashboard-theme .nr-dashboard-template .md-button:not(:first-of-type) {\n    margin-top: 0px;\n}\n\n/* The Modal (background) */\n.modal {\n    display: none; /* Hidden by default */\n    position: fixed; /* Stay in place */\n    opacity:0.99;\n    z-index: 100; /* Sit on top */\n    left: 0;\n    top: 0;\n    width: 100%; /* Full width */\n    height: 100%; /* Full height */\n    overflow: auto; /* Enable scroll if needed */\n    background-color: rgb(0,0,0); /* Fallback color */\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n/* Modal Content */\n.modal-content {\n    position: fixed;\n    background-color: #fefefe;\n    margin: auto;\n    padding: 0;\n    bottom: 0%;\n    left: 50%;\n    transform: translate(-50%, 0%);\n    border: 1px solid #888;\n    width: fit-content;\n    max-width: 100%;\n    max-height: 100%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n    -webkit-animation-name: animate;\n    -webkit-animation-duration: 0.4s;\n    animation-name: animate;\n    animation-duration: 0.4s\n}\n\n/* Add Animation */\n@-webkit-keyframes animate {\n    from {bottom:100%; opacity:0} \n    to {bottom:0%; opacity:1}\n}\n\n@keyframes animate {\n    from {bottom:100%; opacity:0}\n    to {bottom:0%; opacity:1}\n}\n\n/* The Close Button */\n.close {\n    color: black;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n\n.close:hover,\n.close:focus {\n    color: #000;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.modal-header {\n    padding: 2px 16px;\n    background-color: aliceblue;\n    color: white;\n}\n\n.modal-body {padding: 2px 16px;}\n\n.modal-footer {\n    padding: 2px 16px;\n    background-color: #5cb85c;\n    color: white;\n}\n\n.jkeyboard {\n  display: inline-block;\n}\n.jkeyboard, .jkeyboard .jline, .jkeyboard .jline ul {\n  display: block;\n  margin: 0;\n  padding: 0;\n}\n.jkeyboard .jline {\n  text-align: center;\n  margin-left: -14px;\n}\n.jkeyboard .jline ul li {\n  font-family: arial, sans-serif;\n  font-size: 20px;\n  display: inline-block;\n  border: 1px solid #468db3;\n  -webkit-box-shadow: 0 0 3px #468db3;\n  -webkit-box-shadow: inset 0 0 3px #468db3;\n  margin: 5px 0 1px 6px;\n  color: #000000;\n  border-radius: 5px;\n  width: 52px;\n  height: 52px;\n  box-sizing: border-box;\n  text-align: center;\n  line-height: 52px;\n  overflow: hidden;\n  cursor: pointer;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: -moz-none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.jkeyboard .jline ul li.uppercase {\n  text-transform: uppercase;\n}\n.jkeyboard .jline ul li:hover, .jkeyboard .jline ul li:active {\n  background-color: #185a82;\n}\n.jkeyboard .jline .return {\n  width: 80px;\n}\n.jkeyboard .jline .space {\n  width: 366px;\n}\n.jkeyboard .jline .numeric_switch {\n  width: 65px;\n}\n.jkeyboard .jline .layout_switch {\n}\n.jkeyboard .jline .shift {\n  width: 60px;\n}\n.jkeyboard .jline .backspace {\n  width: 69px;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "730d3cd35c29e597",
+        "type": "ui_template",
+        "z": "735ce522855463f2",
+        "group": "0124f391714d0602",
+        "name": "Virtual Keyboard",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div id=\"empty\"></div>\n<button class=\"VK\">V-KeyBoard On</button>\n\n<!-- The Modal -->\n<div id=\"myModal\" class=\"modal\">\n\n  <!-- Modal content -->\n  <div class=\"modal-content\">\n      <div class=\"modal-header\">\n      <span class=\"close\" onclick=\"closeModal()\">&times;</span>\n      <h2 id=\"vkeyname\" style=\"background-color: aliceblue !important; color: black !important; text-align: center; min-height: 30px;\">V-Keyboard</h2>\n    </div>\n    <div class=\"modal-body\">\n        <div id=\"keyboard\"></div>\n        <div>\n        </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.VK{\n    position: fixed;\n    top: 60px;\n    right: 20px;\n    height: 30px;\n}\n</style>\n\n<script>\n\nvar clickState = 1;\nvar btn = document.querySelector('.VK');\n\nbtn.addEventListener('click', function(){\n\n  if (clickState == 0) {\n    this.textContent = 'V-KeyBoard On';\n    modal = document.getElementById('myModal');\n    clickState = 1;\n  } else {\n    this.textContent = 'V-KeyBoard Off';\n    modal = document.getElementById('empty');\n    clickState = 0;\n  }\n\n});\n</script>\n\n<script>\n    // Get the modal\nvar modal = document.getElementById('myModal');\nvar inputTags;\nvar inputType;\nvar inputTarget;\n\nvar getinputs = function() {\n    inputTags = document.getElementsByTagName(\"input\");\n    console.log(inputTags)\n    for (var i = 0; i < inputTags.length; i++) {\n        inputTags[i].addEventListener('click', openModal, false)\n    }\n}\n\nsetTimeout(function(){ getinputs(); }, 1000);\n\nvar openModal = function() {\n    inputType = event.target.type\n    inputTarget = event.target\n    var layoutName;\n    if (inputType == \"number\"){\n        //inputTarget.type = \"number\" //hack because chrome doesn't allow setselection in number inputs\n        //inputTarget.value = \"\"\n        layoutName = \"numbers_only\"\n    }else{\n        layoutName = \"english\"\n    }\n    $('#vkeyname').text(event.target.value)\n    $('#keyboard').unbind().removeData();\n    modal.style.display = \"block\";\n    $('#keyboard').jkeyboard({\n        layout: layoutName,\n        input: $('#'+$(this).attr('id'))\n    });\n}\n\n\n// Get the <span> element that closes the modal\nvar span = document.getElementsByClassName(\"close\")[0];\n\n// When the user clicks anywhere outside of the modal, close it\nwindow.onclick = function(event) {\n    var source = event.target;\n    if (source == modal || source == span) {\n        closeModal(source)\n    }\n};\n\nvar closeModal = function(source){\n    //console.log(\"closing\")\n    modal.style.display = \"none\";\n   \n    if (inputType == \"number\"){\n        inputTarget.type = \"number\" //hack because chrome doesn't allow selectionstart on number inputs\n    }\n}\n\n    \n// the semi-colon before function invocation is a safety net against concatenated\n// scripts and/or other plugins which may not be closed properly.\n; (function ($, window, document, undefined) {\n\n    // undefined is used here as the undefined global variable in ECMAScript 3 is\n    // mutable (ie. it can be changed by someone else). undefined isn't really being\n    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined\n    // can no longer be modified.\n\n    // window and document are passed through as local variable rather than global\n    // as this (slightly) quickens the resolution process and can be more efficiently\n    // minified (especially when both are regularly referenced in your plugin).\n\n    // Create the defaults once\n    var pluginName = \"jkeyboard\",\n        defaults = {\n            layout: \"english\",\n            input: $('#input'),\n            customLayouts: {\n                selectable: []\n            },\n        };\n\n\n    var function_keys = {\n        backspace: {\n            text: 'DEL',\n        },\n        return: {\n            text: 'Enter'\n        },\n        shift: {\n            text: 'Shift'\n        },\n        space: {\n            text: 'Space'\n        },\n        numeric_switch: {\n            text: '123',\n            command: function () {\n                this.createKeyboard('numeric');\n                this.events();\n            }\n        },\n        layout_switch: {\n            text: '<i class=\"fa fa-keyboard-o\" aria-hidden=\"true\"></i>',\n            command: function () {\n                var l = this.toggleLayout();\n                this.createKeyboard(l);\n                this.events();\n            }\n        },\n        character_switch: {\n            text: 'ABC',\n            command: function () {\n                this.createKeyboard(layout);\n                this.events();\n            }\n        },\n        symbol_switch: {\n            text: '#+=',\n            command: function () {\n                this.createKeyboard('symbolic');\n                this.events();\n            }\n        }\n    };\n\n\n    var layouts = {\n        selectable: ['english', 'russian','french', 'emoji'],\n        english: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        russian: [\n            ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х'],\n            ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],\n            ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        french: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l','à','ç'],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm','é','è', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        emoji: [\n            ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊',],\n            ['😋', '😎', '😍', '😘', '❤️', '🙏', '🔥', '✨', '👍','👌','💯'],\n            ['🤷', '🎉', '👏', '🤦', '🙌', '🎶', '💥', '🌈','✅','⭐', '👀'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],            \n        numeric: [\n            ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],\n            ['-', '/', ':', ';', '(', ')', '$', '&', '@', '\"'],\n            ['symbol_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n        ],\n        numbers_only: [\n            ['1', '2', '3',],\n            ['4', '5', '6',],\n            ['7', '8', '9',],\n            ['0', 'backspace', 'return'],\n        ],\n        symbolic: [\n            ['[', ']', '{', '}', '#', '%', '^', '*', '+', '='],\n            ['_', '\\\\', '|', '~', '<', '>'],\n            ['numeric_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n\n        ]\n    }\n\n    var shift = false, capslock = false, layout = 'english', layout_id = 0;\n\n    // The actual plugin constructor\n    function Plugin(element, options) {\n        this.element = element;\n        // jQuery has an extend method which merges the contents of two or\n        // more objects, storing the result in the first object. The first object\n        // is generally empty as we don't want to alter the default options for\n        // future instances of the plugin\n        this.settings = $.extend({}, defaults, options);\n        // Extend & Merge the cusom layouts\n        layouts = $.extend(true, {}, this.settings.customLayouts, layouts);\n        if (Array.isArray(this.settings.customLayouts.selectable)) {\n            $.merge(layouts.selectable, this.settings.customLayouts.selectable);\n        }\n        this._defaults = defaults;\n        this._name = pluginName;\n        this.init();\n    }\n\n    Plugin.prototype = {\n        init: function () {\n            layout = this.settings.layout;\n            this.createKeyboard(layout);\n            this.events();\n        },\n\n        setInput: function (newInputField) {\n            this.settings.input = newInputField;\n        },\n\n        createKeyboard: function (layout) {\n            shift = false;\n            capslock = false;\n\n            var keyboard_container = $('<ul/>').addClass('jkeyboard'),\n                me = this;\n\n            layouts[layout].forEach(function (line, index) {\n                var line_container = $('<li/>').addClass('jline');\n                line_container.append(me.createLine(line));\n                keyboard_container.append(line_container);\n            });\n\n            $(this.element).html('').append(keyboard_container);\n        },\n\n        createLine: function (line) {\n            var line_container = $('<ul/>');\n\n            line.forEach(function (key, index) {\n                var key_container = $('<li/>').addClass('jkey').data('command', key);\n\n                if (function_keys[key]) {\n                    key_container.addClass(key).html(function_keys[key].text);\n                }\n                else {\n                    key_container.addClass('letter').html(key);\n                }\n\n                line_container.append(key_container);\n            })\n\n            return line_container;\n        },\n\n        events: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift'),\n                space_key = $(this.element).find('.space'),\n                backspace_key = $(this.element).find('.backspace'),\n                return_key = $(this.element).find('.return'),\n\n                me = this,\n                fkeys = Object.keys(function_keys).map(function (k) {\n                    return '.' + k;\n                }).join(',');\n\n            letters.on('click', function () {\n                me.type((shift || capslock) ? $(this).text().toUpperCase() : $(this).text());\n            });\n\n            space_key.on('click', function () {\n                me.type(' ');\n            });\n\n            return_key.on('click', function () {\n                me.enter();\n            });\n\n            backspace_key.on('click', function () {\n                me.backspace();\n            });\n\n            shift_key.on('click', function () {\n                if (capslock) {\n                    me.toggleShiftOff();\n                    capslock = false;\n                } else {\n                    me.toggleShiftOn();\n                }\n            }).on('dblclick', function () {\n                capslock = true;\n            });\n\n\n            $(fkeys).on('click', function () {\n                var command = function_keys[$(this).data('command')].command;\n                if (!command) return;\n\n                command.call(me);\n            });\n        },\n\n        type: function (key) {\n            var input = this.settings.input,\n                val = input.val(),\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n\n            var max_length = $(input).attr(\"maxlength\");\n            if (start == end && end == val.length) {\n                if (!max_length || val.length < max_length) {\n                    input.val(val + key);\n                    input.change()\n                    $('#vkeyname').text(val + key)\n                }\n            } else {\n                if (input_node.type == \"text\"){\n                    var new_string = this.insertToString(start, end, val, key);\n                    input.val(new_string);\n                    start++;\n                    end = start;\n                    input_node.setSelectionRange(start, end);\n                    input.change()\n                }else if (input_node.type == \"number\"){\n                    input.val(val + key);\n                }else{\n                    input.val(val + key);\n                    input.change()\n                }\n                $('#vkeyname').text(val + key)\n                \n            }\n            input.trigger('focus');\n\n            if (shift && !capslock) {\n                this.toggleShiftOff();\n            }\n        },\n        \n        enter: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input_node.type == \"text\"){\n                val = val + \"\\n\";\n                $('#vkeyname').text(val)\n            }\n            input.change()\n            input.focus()\n            if (input_node.type == \"number\"){\n                modal.style.display = \"none\";\n            }\n        },\n\n        backspace: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input.type == \"text\"){\n                input.val(val.slice(0, start-1) + val.slice(start))\n                input_node.setSelectionRange(start-1, start-1);\n                //console.log(val)\n                $('#vkeyname').text(val)\n            }else{\n                input.val(val.slice(0,-1))\n                $('#vkeyname').text(val.slice(0,-1))\n            }\n            //input.change()\n            //input.focus()\n        },\n\n        toggleShiftOn: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.addClass('uppercase');\n            shift_key.addClass('active')\n            shift = true;\n        },\n\n        toggleShiftOff: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.removeClass('uppercase');\n            shift_key.removeClass('active');\n            shift = false;\n        },\n\n        toggleLayout: function () {\n            layout_id = layout_id || 0;\n            var plain_layouts = layouts.selectable;\n            layout_id++;\n\n            var current_id = layout_id % plain_layouts.length;\n            var SelectedLayoutName = plain_layouts[current_id];\n            $('#vkeyname').text('V-Keyboard ' + SelectedLayoutName )\n            return plain_layouts[current_id];\n        },\n\n        insertToString: function (start, end, string, insert_string) {\n            return string.substring(0, start) + insert_string + string.substring(end, string.length);\n        }\n    };\n\n        /*\n\t\t// A really lightweight plugin wrapper around the constructor,\n\t\t// preventing against multiple instantiations\n\t\t$.fn[ pluginName ] = function ( options ) {\n\t\t\t\treturn this.each(function() {\n\t\t\t\t\t\tif ( !$.data( this, \"plugin_\" + pluginName ) ) {\n\t\t\t\t\t\t\t\t$.data( this, \"plugin_\" + pluginName, new Plugin( this, options ) );\n\t\t\t\t\t\t}\n\t\t\t\t});\n\t\t};\n        */\n        var methods = {\n            init: function(options) {\n                if (!this.data(\"plugin_\" + pluginName)) {\n                    this.data(\"plugin_\" + pluginName, new Plugin(this, options));\n                }\n            },\n\t\t\tsetInput: function(content) {\n\t\t\t\tthis.data(\"plugin_\" + pluginName).setInput($(content));\n            },\n            setLayout: function(layoutname) {\n                // change layout if it is not match current\n                object = this.data(\"plugin_\" + pluginName);\n                if (typeof(layouts[layoutname]) !== 'undefined' && object.settings.layout != layoutname) {\n                    object.settings.layout = layoutname;\n                    object.createKeyboard(layoutname);\n                    object.events();\n                };\n            },\n        };\n\n\t\t$.fn[pluginName] = function (methodOrOptions) {\n            if (methods[methodOrOptions]) {\n                return methods[methodOrOptions].apply(this.first(), Array.prototype.slice.call( arguments, 1));\n            } else if (typeof methodOrOptions === 'object' || ! methodOrOptions) {\n                // Default to \"init\"\n                return methods.init.apply(this.first(), arguments);\n            } else {\n                $.error('Method ' +  methodOrOptions + ' does not exist on jQuery.tooltip');\n            }\n        };\n\n})(jQuery, window, document);\n</script>\n\n<style>\nbody {font-family: Arial, Helvetica, sans-serif;}\n\n.nr-dashboard-theme .nr-dashboard-template .md-button:not(:first-of-type) {\n    margin-top: 0px;\n}\n\n/* The Modal (background) */\n.modal {\n    display: none; /* Hidden by default */\n    position: fixed; /* Stay in place */\n    opacity:0.99;\n    z-index: 100; /* Sit on top */\n    left: 0;\n    top: 0;\n    width: 100%; /* Full width */\n    height: 100%; /* Full height */\n    overflow: auto; /* Enable scroll if needed */\n    background-color: rgb(0,0,0); /* Fallback color */\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n/* Modal Content */\n.modal-content {\n    position: fixed;\n    background-color: #fefefe;\n    margin: auto;\n    padding: 0;\n    bottom: 0%;\n    left: 50%;\n    transform: translate(-50%, 0%);\n    border: 1px solid #888;\n    width: fit-content;\n    max-width: 100%;\n    max-height: 100%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n    -webkit-animation-name: animate;\n    -webkit-animation-duration: 0.4s;\n    animation-name: animate;\n    animation-duration: 0.4s\n}\n\n/* Add Animation */\n@-webkit-keyframes animate {\n    from {bottom:100%; opacity:0} \n    to {bottom:0%; opacity:1}\n}\n\n@keyframes animate {\n    from {bottom:100%; opacity:0}\n    to {bottom:0%; opacity:1}\n}\n\n/* The Close Button */\n.close {\n    color: black;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n\n.close:hover,\n.close:focus {\n    color: #000;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.modal-header {\n    padding: 2px 16px;\n    background-color: aliceblue;\n    color: white;\n}\n\n.modal-body {padding: 2px 16px;}\n\n.modal-footer {\n    padding: 2px 16px;\n    background-color: #5cb85c;\n    color: white;\n}\n\n.jkeyboard {\n  display: inline-block;\n}\n.jkeyboard, .jkeyboard .jline, .jkeyboard .jline ul {\n  display: block;\n  margin: 0;\n  padding: 0;\n}\n.jkeyboard .jline {\n  text-align: center;\n  margin-left: -14px;\n}\n.jkeyboard .jline ul li {\n  font-family: arial, sans-serif;\n  font-size: 20px;\n  display: inline-block;\n  border: 1px solid #468db3;\n  -webkit-box-shadow: 0 0 3px #468db3;\n  -webkit-box-shadow: inset 0 0 3px #468db3;\n  margin: 5px 0 1px 6px;\n  color: #000000;\n  border-radius: 5px;\n  width: 52px;\n  height: 52px;\n  box-sizing: border-box;\n  text-align: center;\n  line-height: 52px;\n  overflow: hidden;\n  cursor: pointer;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: -moz-none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.jkeyboard .jline ul li.uppercase {\n  text-transform: uppercase;\n}\n.jkeyboard .jline ul li:hover, .jkeyboard .jline ul li:active {\n  background-color: #185a82;\n}\n.jkeyboard .jline .return {\n  width: 80px;\n}\n.jkeyboard .jline .space {\n  width: 366px;\n}\n.jkeyboard .jline .numeric_switch {\n  width: 65px;\n}\n.jkeyboard .jline .layout_switch {\n}\n.jkeyboard .jline .shift {\n  width: 60px;\n}\n.jkeyboard .jline .backspace {\n  width: 69px;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 900,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1896640cb9c87645",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "check id",
+        "func": "msg.payload = global.get(\"id\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 120,
+        "wires": [
+            [
+                "d0ba149316c2c796"
+            ]
+        ]
+    },
+    {
+        "id": "37071193c0b89c56",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 800,
+        "y": 120,
+        "wires": [
+            [
+                "1896640cb9c87645"
+            ]
+        ]
+    },
+    {
+        "id": "d0ba149316c2c796",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ea9e3b178d029e0c",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "envoi id",
+        "func": "var id = global.get(\"id\");\nmsg.payload = { \"requete\": \"id\", \"id\": id }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 120,
+        "wires": [
+            [
+                "ca64a9095cd941fd",
+                "d00b08f05a3e957b"
+            ]
+        ]
+    },
+    {
+        "id": "530ab78594836722",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Debug des global",
+        "info": "",
+        "x": 800,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5d34968626f11aaf",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "Initialisation mot de passe",
+        "func": "global.set(\"password\", \"minesparis\");\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1610,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4af14819cc4ff8c3",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1420,
+        "y": 80,
+        "wires": [
+            [
+                "5d34968626f11aaf"
+            ]
+        ]
+    },
+    {
+        "id": "1991d253d4e26ff9",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Setup mdp",
+        "info": "",
+        "x": 1400,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1d10890bcbb4b999",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "check mdp",
+        "func": "msg.payload = global.get(\"password\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 160,
+        "wires": [
+            [
+                "b90ea3095c678e0e"
+            ]
+        ]
+    },
+    {
+        "id": "e939e1879d4c90a5",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 800,
+        "y": 160,
+        "wires": [
+            [
+                "1d10890bcbb4b999"
+            ]
+        ]
+    },
+    {
+        "id": "b90ea3095c678e0e",
+        "type": "debug",
+        "z": "735ce522855463f2",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "29b187dcc28f2d39",
+        "type": "comment",
+        "z": "735ce522855463f2",
+        "name": "Setup de l'id",
+        "info": "",
+        "x": 150,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "235dc7898fa1a2fa",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "cabfe69863551152",
+        "order": 4,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "settings",
+        "payload": "6",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 310,
+        "y": 1400,
+        "wires": [
+            [
+                "bcf38216c49b8d2d"
+            ]
+        ]
+    },
+    {
+        "id": "bcf38216c49b8d2d",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 460,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6547b28d9065aca3",
+        "type": "ui_text_input",
+        "z": "735ce522855463f2",
+        "name": "",
+        "label": "Identifiant salle",
+        "tooltip": "",
+        "group": "647052b61f3de1c7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "10000",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 180,
+        "y": 1660,
+        "wires": [
+            [
+                "01d24364c2065907",
+                "d7a846e2cd8a9798"
+            ]
+        ]
+    },
+    {
+        "id": "01d24364c2065907",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "function 3",
+        "func": "var salle = msg.payload;\nglobal.set(\"id\",salle);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "601821fc4f26d7cf",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "647052b61f3de1c7",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Valider",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 150,
+        "y": 1740,
+        "wires": [
+            [
+                "7e2d6a24fb5912d6",
+                "e4ee16836e1d0d56"
+            ]
+        ]
+    },
+    {
+        "id": "7e2d6a24fb5912d6",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 300,
+        "y": 1740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4ee16836e1d0d56",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 140,
+        "y": 1700,
+        "wires": [
+            [
+                "6547b28d9065aca3"
+            ]
+        ]
+    },
+    {
+        "id": "4978f9895aa4818c",
+        "type": "switch",
+        "z": "735ce522855463f2",
+        "name": "",
+        "property": "payload[\"mdp\"]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "password",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 1540,
+        "wires": [
+            [
+                "51f362a3bda2147b"
+            ]
+        ]
+    },
+    {
+        "id": "84e0a0e63956e41a",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 580,
+        "y": 1540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "51f362a3bda2147b",
+        "type": "change",
+        "z": "735ce522855463f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "7",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 1540,
+        "wires": [
+            [
+                "84e0a0e63956e41a"
+            ]
+        ]
+    },
+    {
+        "id": "06e2d3c8e9ce76c7",
+        "type": "ui_button",
+        "z": "735ce522855463f2",
+        "name": "",
+        "group": "e97d9fdad294ff7d",
+        "order": 2,
+        "width": "1",
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "retour accueil",
+        "icon": "undo",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 1600,
+        "wires": [
+            [
+                "5ef492088f7dbeff"
+            ]
+        ]
+    },
+    {
+        "id": "5ef492088f7dbeff",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 220,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25b466371657a476",
+        "type": "ui_template",
+        "z": "735ce522855463f2",
+        "group": "cd5edce01fd63d78",
+        "name": "Virtual Keyboard",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div id=\"empty\"></div>\n<button class=\"VK\">V-KeyBoard On</button>\n\n<!-- The Modal -->\n<div id=\"myModal\" class=\"modal\">\n\n  <!-- Modal content -->\n  <div class=\"modal-content\">\n      <div class=\"modal-header\">\n      <span class=\"close\" onclick=\"closeModal()\">&times;</span>\n      <h2 id=\"vkeyname\" style=\"background-color: aliceblue !important; color: black !important; text-align: center; min-height: 30px;\">V-Keyboard</h2>\n    </div>\n    <div class=\"modal-body\">\n        <div id=\"keyboard\"></div>\n        <div>\n        </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.VK{\n    position: fixed;\n    top: 60px;\n    right: 20px;\n    height: 30px;\n}\n</style>\n\n<script>\n\nvar clickState = 1;\nvar btn = document.querySelector('.VK');\n\nbtn.addEventListener('click', function(){\n\n  if (clickState == 0) {\n    this.textContent = 'V-KeyBoard On';\n    modal = document.getElementById('myModal');\n    clickState = 1;\n  } else {\n    this.textContent = 'V-KeyBoard Off';\n    modal = document.getElementById('empty');\n    clickState = 0;\n  }\n\n});\n</script>\n\n<script>\n    // Get the modal\nvar modal = document.getElementById('myModal');\nvar inputTags;\nvar inputType;\nvar inputTarget;\n\nvar getinputs = function() {\n    inputTags = document.getElementsByTagName(\"input\");\n    console.log(inputTags)\n    for (var i = 0; i < inputTags.length; i++) {\n        inputTags[i].addEventListener('click', openModal, false)\n    }\n}\n\nsetTimeout(function(){ getinputs(); }, 1000);\n\nvar openModal = function() {\n    inputType = event.target.type\n    inputTarget = event.target\n    var layoutName;\n    if (inputType == \"number\"){\n        //inputTarget.type = \"number\" //hack because chrome doesn't allow setselection in number inputs\n        //inputTarget.value = \"\"\n        layoutName = \"numbers_only\"\n    }else{\n        layoutName = \"english\"\n    }\n    $('#vkeyname').text(event.target.value)\n    $('#keyboard').unbind().removeData();\n    modal.style.display = \"block\";\n    $('#keyboard').jkeyboard({\n        layout: layoutName,\n        input: $('#'+$(this).attr('id'))\n    });\n}\n\n\n// Get the <span> element that closes the modal\nvar span = document.getElementsByClassName(\"close\")[0];\n\n// When the user clicks anywhere outside of the modal, close it\nwindow.onclick = function(event) {\n    var source = event.target;\n    if (source == modal || source == span) {\n        closeModal(source)\n    }\n};\n\nvar closeModal = function(source){\n    //console.log(\"closing\")\n    modal.style.display = \"none\";\n   \n    if (inputType == \"number\"){\n        inputTarget.type = \"number\" //hack because chrome doesn't allow selectionstart on number inputs\n    }\n}\n\n    \n// the semi-colon before function invocation is a safety net against concatenated\n// scripts and/or other plugins which may not be closed properly.\n; (function ($, window, document, undefined) {\n\n    // undefined is used here as the undefined global variable in ECMAScript 3 is\n    // mutable (ie. it can be changed by someone else). undefined isn't really being\n    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined\n    // can no longer be modified.\n\n    // window and document are passed through as local variable rather than global\n    // as this (slightly) quickens the resolution process and can be more efficiently\n    // minified (especially when both are regularly referenced in your plugin).\n\n    // Create the defaults once\n    var pluginName = \"jkeyboard\",\n        defaults = {\n            layout: \"english\",\n            input: $('#input'),\n            customLayouts: {\n                selectable: []\n            },\n        };\n\n\n    var function_keys = {\n        backspace: {\n            text: 'DEL',\n        },\n        return: {\n            text: 'Enter'\n        },\n        shift: {\n            text: 'Shift'\n        },\n        space: {\n            text: 'Space'\n        },\n        numeric_switch: {\n            text: '123',\n            command: function () {\n                this.createKeyboard('numeric');\n                this.events();\n            }\n        },\n        layout_switch: {\n            text: '<i class=\"fa fa-keyboard-o\" aria-hidden=\"true\"></i>',\n            command: function () {\n                var l = this.toggleLayout();\n                this.createKeyboard(l);\n                this.events();\n            }\n        },\n        character_switch: {\n            text: 'ABC',\n            command: function () {\n                this.createKeyboard(layout);\n                this.events();\n            }\n        },\n        symbol_switch: {\n            text: '#+=',\n            command: function () {\n                this.createKeyboard('symbolic');\n                this.events();\n            }\n        }\n    };\n\n\n    var layouts = {\n        selectable: ['english', 'russian','french', 'emoji'],\n        english: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        russian: [\n            ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х'],\n            ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],\n            ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        french: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l','à','ç'],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm','é','è', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        emoji: [\n            ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊',],\n            ['😋', '😎', '😍', '😘', '❤️', '🙏', '🔥', '✨', '👍','👌','💯'],\n            ['🤷', '🎉', '👏', '🤦', '🙌', '🎶', '💥', '🌈','✅','⭐', '👀'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],            \n        numeric: [\n            ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],\n            ['-', '/', ':', ';', '(', ')', '$', '&', '@', '\"'],\n            ['symbol_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n        ],\n        numbers_only: [\n            ['1', '2', '3',],\n            ['4', '5', '6',],\n            ['7', '8', '9',],\n            ['0', 'backspace', 'return'],\n        ],\n        symbolic: [\n            ['[', ']', '{', '}', '#', '%', '^', '*', '+', '='],\n            ['_', '\\\\', '|', '~', '<', '>'],\n            ['numeric_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n\n        ]\n    }\n\n    var shift = false, capslock = false, layout = 'english', layout_id = 0;\n\n    // The actual plugin constructor\n    function Plugin(element, options) {\n        this.element = element;\n        // jQuery has an extend method which merges the contents of two or\n        // more objects, storing the result in the first object. The first object\n        // is generally empty as we don't want to alter the default options for\n        // future instances of the plugin\n        this.settings = $.extend({}, defaults, options);\n        // Extend & Merge the cusom layouts\n        layouts = $.extend(true, {}, this.settings.customLayouts, layouts);\n        if (Array.isArray(this.settings.customLayouts.selectable)) {\n            $.merge(layouts.selectable, this.settings.customLayouts.selectable);\n        }\n        this._defaults = defaults;\n        this._name = pluginName;\n        this.init();\n    }\n\n    Plugin.prototype = {\n        init: function () {\n            layout = this.settings.layout;\n            this.createKeyboard(layout);\n            this.events();\n        },\n\n        setInput: function (newInputField) {\n            this.settings.input = newInputField;\n        },\n\n        createKeyboard: function (layout) {\n            shift = false;\n            capslock = false;\n\n            var keyboard_container = $('<ul/>').addClass('jkeyboard'),\n                me = this;\n\n            layouts[layout].forEach(function (line, index) {\n                var line_container = $('<li/>').addClass('jline');\n                line_container.append(me.createLine(line));\n                keyboard_container.append(line_container);\n            });\n\n            $(this.element).html('').append(keyboard_container);\n        },\n\n        createLine: function (line) {\n            var line_container = $('<ul/>');\n\n            line.forEach(function (key, index) {\n                var key_container = $('<li/>').addClass('jkey').data('command', key);\n\n                if (function_keys[key]) {\n                    key_container.addClass(key).html(function_keys[key].text);\n                }\n                else {\n                    key_container.addClass('letter').html(key);\n                }\n\n                line_container.append(key_container);\n            })\n\n            return line_container;\n        },\n\n        events: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift'),\n                space_key = $(this.element).find('.space'),\n                backspace_key = $(this.element).find('.backspace'),\n                return_key = $(this.element).find('.return'),\n\n                me = this,\n                fkeys = Object.keys(function_keys).map(function (k) {\n                    return '.' + k;\n                }).join(',');\n\n            letters.on('click', function () {\n                me.type((shift || capslock) ? $(this).text().toUpperCase() : $(this).text());\n            });\n\n            space_key.on('click', function () {\n                me.type(' ');\n            });\n\n            return_key.on('click', function () {\n                me.enter();\n            });\n\n            backspace_key.on('click', function () {\n                me.backspace();\n            });\n\n            shift_key.on('click', function () {\n                if (capslock) {\n                    me.toggleShiftOff();\n                    capslock = false;\n                } else {\n                    me.toggleShiftOn();\n                }\n            }).on('dblclick', function () {\n                capslock = true;\n            });\n\n\n            $(fkeys).on('click', function () {\n                var command = function_keys[$(this).data('command')].command;\n                if (!command) return;\n\n                command.call(me);\n            });\n        },\n\n        type: function (key) {\n            var input = this.settings.input,\n                val = input.val(),\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n\n            var max_length = $(input).attr(\"maxlength\");\n            if (start == end && end == val.length) {\n                if (!max_length || val.length < max_length) {\n                    input.val(val + key);\n                    input.change()\n                    $('#vkeyname').text(val + key)\n                }\n            } else {\n                if (input_node.type == \"text\"){\n                    var new_string = this.insertToString(start, end, val, key);\n                    input.val(new_string);\n                    start++;\n                    end = start;\n                    input_node.setSelectionRange(start, end);\n                    input.change()\n                }else if (input_node.type == \"number\"){\n                    input.val(val + key);\n                }else{\n                    input.val(val + key);\n                    input.change()\n                }\n                $('#vkeyname').text(val + key)\n                \n            }\n            input.trigger('focus');\n\n            if (shift && !capslock) {\n                this.toggleShiftOff();\n            }\n        },\n        \n        enter: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input_node.type == \"text\"){\n                val = val + \"\\n\";\n                $('#vkeyname').text(val)\n            }\n            input.change()\n            input.focus()\n            if (input_node.type == \"number\"){\n                modal.style.display = \"none\";\n            }\n        },\n\n        backspace: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input.type == \"text\"){\n                input.val(val.slice(0, start-1) + val.slice(start))\n                input_node.setSelectionRange(start-1, start-1);\n                //console.log(val)\n                $('#vkeyname').text(val)\n            }else{\n                input.val(val.slice(0,-1))\n                $('#vkeyname').text(val.slice(0,-1))\n            }\n            //input.change()\n            //input.focus()\n        },\n\n        toggleShiftOn: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.addClass('uppercase');\n            shift_key.addClass('active')\n            shift = true;\n        },\n\n        toggleShiftOff: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.removeClass('uppercase');\n            shift_key.removeClass('active');\n            shift = false;\n        },\n\n        toggleLayout: function () {\n            layout_id = layout_id || 0;\n            var plain_layouts = layouts.selectable;\n            layout_id++;\n\n            var current_id = layout_id % plain_layouts.length;\n            var SelectedLayoutName = plain_layouts[current_id];\n            $('#vkeyname').text('V-Keyboard ' + SelectedLayoutName )\n            return plain_layouts[current_id];\n        },\n\n        insertToString: function (start, end, string, insert_string) {\n            return string.substring(0, start) + insert_string + string.substring(end, string.length);\n        }\n    };\n\n        /*\n\t\t// A really lightweight plugin wrapper around the constructor,\n\t\t// preventing against multiple instantiations\n\t\t$.fn[ pluginName ] = function ( options ) {\n\t\t\t\treturn this.each(function() {\n\t\t\t\t\t\tif ( !$.data( this, \"plugin_\" + pluginName ) ) {\n\t\t\t\t\t\t\t\t$.data( this, \"plugin_\" + pluginName, new Plugin( this, options ) );\n\t\t\t\t\t\t}\n\t\t\t\t});\n\t\t};\n        */\n        var methods = {\n            init: function(options) {\n                if (!this.data(\"plugin_\" + pluginName)) {\n                    this.data(\"plugin_\" + pluginName, new Plugin(this, options));\n                }\n            },\n\t\t\tsetInput: function(content) {\n\t\t\t\tthis.data(\"plugin_\" + pluginName).setInput($(content));\n            },\n            setLayout: function(layoutname) {\n                // change layout if it is not match current\n                object = this.data(\"plugin_\" + pluginName);\n                if (typeof(layouts[layoutname]) !== 'undefined' && object.settings.layout != layoutname) {\n                    object.settings.layout = layoutname;\n                    object.createKeyboard(layoutname);\n                    object.events();\n                };\n            },\n        };\n\n\t\t$.fn[pluginName] = function (methodOrOptions) {\n            if (methods[methodOrOptions]) {\n                return methods[methodOrOptions].apply(this.first(), Array.prototype.slice.call( arguments, 1));\n            } else if (typeof methodOrOptions === 'object' || ! methodOrOptions) {\n                // Default to \"init\"\n                return methods.init.apply(this.first(), arguments);\n            } else {\n                $.error('Method ' +  methodOrOptions + ' does not exist on jQuery.tooltip');\n            }\n        };\n\n})(jQuery, window, document);\n</script>\n\n<style>\nbody {font-family: Arial, Helvetica, sans-serif;}\n\n.nr-dashboard-theme .nr-dashboard-template .md-button:not(:first-of-type) {\n    margin-top: 0px;\n}\n\n/* The Modal (background) */\n.modal {\n    display: none; /* Hidden by default */\n    position: fixed; /* Stay in place */\n    opacity:0.99;\n    z-index: 100; /* Sit on top */\n    left: 0;\n    top: 0;\n    width: 100%; /* Full width */\n    height: 100%; /* Full height */\n    overflow: auto; /* Enable scroll if needed */\n    background-color: rgb(0,0,0); /* Fallback color */\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n/* Modal Content */\n.modal-content {\n    position: fixed;\n    background-color: #fefefe;\n    margin: auto;\n    padding: 0;\n    bottom: 0%;\n    left: 50%;\n    transform: translate(-50%, 0%);\n    border: 1px solid #888;\n    width: fit-content;\n    max-width: 100%;\n    max-height: 100%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n    -webkit-animation-name: animate;\n    -webkit-animation-duration: 0.4s;\n    animation-name: animate;\n    animation-duration: 0.4s\n}\n\n/* Add Animation */\n@-webkit-keyframes animate {\n    from {bottom:100%; opacity:0} \n    to {bottom:0%; opacity:1}\n}\n\n@keyframes animate {\n    from {bottom:100%; opacity:0}\n    to {bottom:0%; opacity:1}\n}\n\n/* The Close Button */\n.close {\n    color: black;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n\n.close:hover,\n.close:focus {\n    color: #000;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.modal-header {\n    padding: 2px 16px;\n    background-color: aliceblue;\n    color: white;\n}\n\n.modal-body {padding: 2px 16px;}\n\n.modal-footer {\n    padding: 2px 16px;\n    background-color: #5cb85c;\n    color: white;\n}\n\n.jkeyboard {\n  display: inline-block;\n}\n.jkeyboard, .jkeyboard .jline, .jkeyboard .jline ul {\n  display: block;\n  margin: 0;\n  padding: 0;\n}\n.jkeyboard .jline {\n  text-align: center;\n  margin-left: -14px;\n}\n.jkeyboard .jline ul li {\n  font-family: arial, sans-serif;\n  font-size: 20px;\n  display: inline-block;\n  border: 1px solid #468db3;\n  -webkit-box-shadow: 0 0 3px #468db3;\n  -webkit-box-shadow: inset 0 0 3px #468db3;\n  margin: 5px 0 1px 6px;\n  color: #000000;\n  border-radius: 5px;\n  width: 52px;\n  height: 52px;\n  box-sizing: border-box;\n  text-align: center;\n  line-height: 52px;\n  overflow: hidden;\n  cursor: pointer;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: -moz-none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.jkeyboard .jline ul li.uppercase {\n  text-transform: uppercase;\n}\n.jkeyboard .jline ul li:hover, .jkeyboard .jline ul li:active {\n  background-color: #185a82;\n}\n.jkeyboard .jline .return {\n  width: 80px;\n}\n.jkeyboard .jline .space {\n  width: 366px;\n}\n.jkeyboard .jline .numeric_switch {\n  width: 65px;\n}\n.jkeyboard .jline .layout_switch {\n}\n.jkeyboard .jline .shift {\n  width: 60px;\n}\n.jkeyboard .jline .backspace {\n  width: 69px;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec52e45ba64b2de0",
+        "type": "ui_template",
+        "z": "735ce522855463f2",
+        "group": "647052b61f3de1c7",
+        "name": "Virtual Keyboard",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div id=\"empty\"></div>\n<button class=\"VK\">V-KeyBoard On</button>\n\n<!-- The Modal -->\n<div id=\"myModal\" class=\"modal\">\n\n  <!-- Modal content -->\n  <div class=\"modal-content\">\n      <div class=\"modal-header\">\n      <span class=\"close\" onclick=\"closeModal()\">&times;</span>\n      <h2 id=\"vkeyname\" style=\"background-color: aliceblue !important; color: black !important; text-align: center; min-height: 30px;\">V-Keyboard</h2>\n    </div>\n    <div class=\"modal-body\">\n        <div id=\"keyboard\"></div>\n        <div>\n        </div>\n    </div>\n  </div>\n</div>\n\n<style>\n.VK{\n    position: fixed;\n    top: 60px;\n    right: 20px;\n    height: 30px;\n}\n</style>\n\n<script>\n\nvar clickState = 1;\nvar btn = document.querySelector('.VK');\n\nbtn.addEventListener('click', function(){\n\n  if (clickState == 0) {\n    this.textContent = 'V-KeyBoard On';\n    modal = document.getElementById('myModal');\n    clickState = 1;\n  } else {\n    this.textContent = 'V-KeyBoard Off';\n    modal = document.getElementById('empty');\n    clickState = 0;\n  }\n\n});\n</script>\n\n<script>\n    // Get the modal\nvar modal = document.getElementById('myModal');\nvar inputTags;\nvar inputType;\nvar inputTarget;\n\nvar getinputs = function() {\n    inputTags = document.getElementsByTagName(\"input\");\n    console.log(inputTags)\n    for (var i = 0; i < inputTags.length; i++) {\n        inputTags[i].addEventListener('click', openModal, false)\n    }\n}\n\nsetTimeout(function(){ getinputs(); }, 1000);\n\nvar openModal = function() {\n    inputType = event.target.type\n    inputTarget = event.target\n    var layoutName;\n    if (inputType == \"number\"){\n        //inputTarget.type = \"number\" //hack because chrome doesn't allow setselection in number inputs\n        //inputTarget.value = \"\"\n        layoutName = \"numbers_only\"\n    }else{\n        layoutName = \"english\"\n    }\n    $('#vkeyname').text(event.target.value)\n    $('#keyboard').unbind().removeData();\n    modal.style.display = \"block\";\n    $('#keyboard').jkeyboard({\n        layout: layoutName,\n        input: $('#'+$(this).attr('id'))\n    });\n}\n\n\n// Get the <span> element that closes the modal\nvar span = document.getElementsByClassName(\"close\")[0];\n\n// When the user clicks anywhere outside of the modal, close it\nwindow.onclick = function(event) {\n    var source = event.target;\n    if (source == modal || source == span) {\n        closeModal(source)\n    }\n};\n\nvar closeModal = function(source){\n    //console.log(\"closing\")\n    modal.style.display = \"none\";\n   \n    if (inputType == \"number\"){\n        inputTarget.type = \"number\" //hack because chrome doesn't allow selectionstart on number inputs\n    }\n}\n\n    \n// the semi-colon before function invocation is a safety net against concatenated\n// scripts and/or other plugins which may not be closed properly.\n; (function ($, window, document, undefined) {\n\n    // undefined is used here as the undefined global variable in ECMAScript 3 is\n    // mutable (ie. it can be changed by someone else). undefined isn't really being\n    // passed in so we can ensure the value of it is truly undefined. In ES5, undefined\n    // can no longer be modified.\n\n    // window and document are passed through as local variable rather than global\n    // as this (slightly) quickens the resolution process and can be more efficiently\n    // minified (especially when both are regularly referenced in your plugin).\n\n    // Create the defaults once\n    var pluginName = \"jkeyboard\",\n        defaults = {\n            layout: \"english\",\n            input: $('#input'),\n            customLayouts: {\n                selectable: []\n            },\n        };\n\n\n    var function_keys = {\n        backspace: {\n            text: 'DEL',\n        },\n        return: {\n            text: 'Enter'\n        },\n        shift: {\n            text: 'Shift'\n        },\n        space: {\n            text: 'Space'\n        },\n        numeric_switch: {\n            text: '123',\n            command: function () {\n                this.createKeyboard('numeric');\n                this.events();\n            }\n        },\n        layout_switch: {\n            text: '<i class=\"fa fa-keyboard-o\" aria-hidden=\"true\"></i>',\n            command: function () {\n                var l = this.toggleLayout();\n                this.createKeyboard(l);\n                this.events();\n            }\n        },\n        character_switch: {\n            text: 'ABC',\n            command: function () {\n                this.createKeyboard(layout);\n                this.events();\n            }\n        },\n        symbol_switch: {\n            text: '#+=',\n            command: function () {\n                this.createKeyboard('symbolic');\n                this.events();\n            }\n        }\n    };\n\n\n    var layouts = {\n        selectable: ['english', 'russian','french', 'emoji'],\n        english: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        russian: [\n            ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х'],\n            ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],\n            ['shift', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        french: [\n            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',],\n            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l','à','ç'],\n            ['shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm','é','è', 'backspace'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],\n        emoji: [\n            ['😀', '😁', '😂', '🤣', '😃', '😄', '😅', '😆', '😉', '😊',],\n            ['😋', '😎', '😍', '😘', '❤️', '🙏', '🔥', '✨', '👍','👌','💯'],\n            ['🤷', '🎉', '👏', '🤦', '🙌', '🎶', '💥', '🌈','✅','⭐', '👀'],\n            ['numeric_switch', 'layout_switch', 'space', 'return']\n        ],            \n        numeric: [\n            ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],\n            ['-', '/', ':', ';', '(', ')', '$', '&', '@', '\"'],\n            ['symbol_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n        ],\n        numbers_only: [\n            ['1', '2', '3',],\n            ['4', '5', '6',],\n            ['7', '8', '9',],\n            ['0', 'backspace', 'return'],\n        ],\n        symbolic: [\n            ['[', ']', '{', '}', '#', '%', '^', '*', '+', '='],\n            ['_', '\\\\', '|', '~', '<', '>'],\n            ['numeric_switch', '.', ',', '?', '!', \"'\", 'backspace'],\n            ['character_switch', 'layout_switch', 'space', 'return'],\n\n        ]\n    }\n\n    var shift = false, capslock = false, layout = 'english', layout_id = 0;\n\n    // The actual plugin constructor\n    function Plugin(element, options) {\n        this.element = element;\n        // jQuery has an extend method which merges the contents of two or\n        // more objects, storing the result in the first object. The first object\n        // is generally empty as we don't want to alter the default options for\n        // future instances of the plugin\n        this.settings = $.extend({}, defaults, options);\n        // Extend & Merge the cusom layouts\n        layouts = $.extend(true, {}, this.settings.customLayouts, layouts);\n        if (Array.isArray(this.settings.customLayouts.selectable)) {\n            $.merge(layouts.selectable, this.settings.customLayouts.selectable);\n        }\n        this._defaults = defaults;\n        this._name = pluginName;\n        this.init();\n    }\n\n    Plugin.prototype = {\n        init: function () {\n            layout = this.settings.layout;\n            this.createKeyboard(layout);\n            this.events();\n        },\n\n        setInput: function (newInputField) {\n            this.settings.input = newInputField;\n        },\n\n        createKeyboard: function (layout) {\n            shift = false;\n            capslock = false;\n\n            var keyboard_container = $('<ul/>').addClass('jkeyboard'),\n                me = this;\n\n            layouts[layout].forEach(function (line, index) {\n                var line_container = $('<li/>').addClass('jline');\n                line_container.append(me.createLine(line));\n                keyboard_container.append(line_container);\n            });\n\n            $(this.element).html('').append(keyboard_container);\n        },\n\n        createLine: function (line) {\n            var line_container = $('<ul/>');\n\n            line.forEach(function (key, index) {\n                var key_container = $('<li/>').addClass('jkey').data('command', key);\n\n                if (function_keys[key]) {\n                    key_container.addClass(key).html(function_keys[key].text);\n                }\n                else {\n                    key_container.addClass('letter').html(key);\n                }\n\n                line_container.append(key_container);\n            })\n\n            return line_container;\n        },\n\n        events: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift'),\n                space_key = $(this.element).find('.space'),\n                backspace_key = $(this.element).find('.backspace'),\n                return_key = $(this.element).find('.return'),\n\n                me = this,\n                fkeys = Object.keys(function_keys).map(function (k) {\n                    return '.' + k;\n                }).join(',');\n\n            letters.on('click', function () {\n                me.type((shift || capslock) ? $(this).text().toUpperCase() : $(this).text());\n            });\n\n            space_key.on('click', function () {\n                me.type(' ');\n            });\n\n            return_key.on('click', function () {\n                me.enter();\n            });\n\n            backspace_key.on('click', function () {\n                me.backspace();\n            });\n\n            shift_key.on('click', function () {\n                if (capslock) {\n                    me.toggleShiftOff();\n                    capslock = false;\n                } else {\n                    me.toggleShiftOn();\n                }\n            }).on('dblclick', function () {\n                capslock = true;\n            });\n\n\n            $(fkeys).on('click', function () {\n                var command = function_keys[$(this).data('command')].command;\n                if (!command) return;\n\n                command.call(me);\n            });\n        },\n\n        type: function (key) {\n            var input = this.settings.input,\n                val = input.val(),\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n\n            var max_length = $(input).attr(\"maxlength\");\n            if (start == end && end == val.length) {\n                if (!max_length || val.length < max_length) {\n                    input.val(val + key);\n                    input.change()\n                    $('#vkeyname').text(val + key)\n                }\n            } else {\n                if (input_node.type == \"text\"){\n                    var new_string = this.insertToString(start, end, val, key);\n                    input.val(new_string);\n                    start++;\n                    end = start;\n                    input_node.setSelectionRange(start, end);\n                    input.change()\n                }else if (input_node.type == \"number\"){\n                    input.val(val + key);\n                }else{\n                    input.val(val + key);\n                    input.change()\n                }\n                $('#vkeyname').text(val + key)\n                \n            }\n            input.trigger('focus');\n\n            if (shift && !capslock) {\n                this.toggleShiftOff();\n            }\n        },\n        \n        enter: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input_node.type == \"text\"){\n                val = val + \"\\n\";\n                $('#vkeyname').text(val)\n            }\n            input.change()\n            input.focus()\n            if (input_node.type == \"number\"){\n                modal.style.display = \"none\";\n            }\n        },\n\n        backspace: function () {\n            var input = this.settings.input,\n                val = input.val();\n                input_node = input.get(0),\n                start = input_node.selectionStart,\n                end = input_node.selectionEnd;\n            if (input.type == \"text\"){\n                input.val(val.slice(0, start-1) + val.slice(start))\n                input_node.setSelectionRange(start-1, start-1);\n                //console.log(val)\n                $('#vkeyname').text(val)\n            }else{\n                input.val(val.slice(0,-1))\n                $('#vkeyname').text(val.slice(0,-1))\n            }\n            //input.change()\n            //input.focus()\n        },\n\n        toggleShiftOn: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.addClass('uppercase');\n            shift_key.addClass('active')\n            shift = true;\n        },\n\n        toggleShiftOff: function () {\n            var letters = $(this.element).find('.letter'),\n                shift_key = $(this.element).find('.shift');\n\n            letters.removeClass('uppercase');\n            shift_key.removeClass('active');\n            shift = false;\n        },\n\n        toggleLayout: function () {\n            layout_id = layout_id || 0;\n            var plain_layouts = layouts.selectable;\n            layout_id++;\n\n            var current_id = layout_id % plain_layouts.length;\n            var SelectedLayoutName = plain_layouts[current_id];\n            $('#vkeyname').text('V-Keyboard ' + SelectedLayoutName )\n            return plain_layouts[current_id];\n        },\n\n        insertToString: function (start, end, string, insert_string) {\n            return string.substring(0, start) + insert_string + string.substring(end, string.length);\n        }\n    };\n\n        /*\n\t\t// A really lightweight plugin wrapper around the constructor,\n\t\t// preventing against multiple instantiations\n\t\t$.fn[ pluginName ] = function ( options ) {\n\t\t\t\treturn this.each(function() {\n\t\t\t\t\t\tif ( !$.data( this, \"plugin_\" + pluginName ) ) {\n\t\t\t\t\t\t\t\t$.data( this, \"plugin_\" + pluginName, new Plugin( this, options ) );\n\t\t\t\t\t\t}\n\t\t\t\t});\n\t\t};\n        */\n        var methods = {\n            init: function(options) {\n                if (!this.data(\"plugin_\" + pluginName)) {\n                    this.data(\"plugin_\" + pluginName, new Plugin(this, options));\n                }\n            },\n\t\t\tsetInput: function(content) {\n\t\t\t\tthis.data(\"plugin_\" + pluginName).setInput($(content));\n            },\n            setLayout: function(layoutname) {\n                // change layout if it is not match current\n                object = this.data(\"plugin_\" + pluginName);\n                if (typeof(layouts[layoutname]) !== 'undefined' && object.settings.layout != layoutname) {\n                    object.settings.layout = layoutname;\n                    object.createKeyboard(layoutname);\n                    object.events();\n                };\n            },\n        };\n\n\t\t$.fn[pluginName] = function (methodOrOptions) {\n            if (methods[methodOrOptions]) {\n                return methods[methodOrOptions].apply(this.first(), Array.prototype.slice.call( arguments, 1));\n            } else if (typeof methodOrOptions === 'object' || ! methodOrOptions) {\n                // Default to \"init\"\n                return methods.init.apply(this.first(), arguments);\n            } else {\n                $.error('Method ' +  methodOrOptions + ' does not exist on jQuery.tooltip');\n            }\n        };\n\n})(jQuery, window, document);\n</script>\n\n<style>\nbody {font-family: Arial, Helvetica, sans-serif;}\n\n.nr-dashboard-theme .nr-dashboard-template .md-button:not(:first-of-type) {\n    margin-top: 0px;\n}\n\n/* The Modal (background) */\n.modal {\n    display: none; /* Hidden by default */\n    position: fixed; /* Stay in place */\n    opacity:0.99;\n    z-index: 100; /* Sit on top */\n    left: 0;\n    top: 0;\n    width: 100%; /* Full width */\n    height: 100%; /* Full height */\n    overflow: auto; /* Enable scroll if needed */\n    background-color: rgb(0,0,0); /* Fallback color */\n    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */\n}\n\n/* Modal Content */\n.modal-content {\n    position: fixed;\n    background-color: #fefefe;\n    margin: auto;\n    padding: 0;\n    bottom: 0%;\n    left: 50%;\n    transform: translate(-50%, 0%);\n    border: 1px solid #888;\n    width: fit-content;\n    max-width: 100%;\n    max-height: 100%;\n    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);\n    -webkit-animation-name: animate;\n    -webkit-animation-duration: 0.4s;\n    animation-name: animate;\n    animation-duration: 0.4s\n}\n\n/* Add Animation */\n@-webkit-keyframes animate {\n    from {bottom:100%; opacity:0} \n    to {bottom:0%; opacity:1}\n}\n\n@keyframes animate {\n    from {bottom:100%; opacity:0}\n    to {bottom:0%; opacity:1}\n}\n\n/* The Close Button */\n.close {\n    color: black;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n\n.close:hover,\n.close:focus {\n    color: #000;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.modal-header {\n    padding: 2px 16px;\n    background-color: aliceblue;\n    color: white;\n}\n\n.modal-body {padding: 2px 16px;}\n\n.modal-footer {\n    padding: 2px 16px;\n    background-color: #5cb85c;\n    color: white;\n}\n\n.jkeyboard {\n  display: inline-block;\n}\n.jkeyboard, .jkeyboard .jline, .jkeyboard .jline ul {\n  display: block;\n  margin: 0;\n  padding: 0;\n}\n.jkeyboard .jline {\n  text-align: center;\n  margin-left: -14px;\n}\n.jkeyboard .jline ul li {\n  font-family: arial, sans-serif;\n  font-size: 20px;\n  display: inline-block;\n  border: 1px solid #468db3;\n  -webkit-box-shadow: 0 0 3px #468db3;\n  -webkit-box-shadow: inset 0 0 3px #468db3;\n  margin: 5px 0 1px 6px;\n  color: #000000;\n  border-radius: 5px;\n  width: 52px;\n  height: 52px;\n  box-sizing: border-box;\n  text-align: center;\n  line-height: 52px;\n  overflow: hidden;\n  cursor: pointer;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: -moz-none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.jkeyboard .jline ul li.uppercase {\n  text-transform: uppercase;\n}\n.jkeyboard .jline ul li:hover, .jkeyboard .jline ul li:active {\n  background-color: #185a82;\n}\n.jkeyboard .jline .return {\n  width: 80px;\n}\n.jkeyboard .jline .space {\n  width: 366px;\n}\n.jkeyboard .jline .numeric_switch {\n  width: 65px;\n}\n.jkeyboard .jline .layout_switch {\n}\n.jkeyboard .jline .shift {\n  width: 60px;\n}\n.jkeyboard .jline .backspace {\n  width: 69px;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 540,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26ec408c1e53e4bf",
+        "type": "websocket out",
+        "z": "735ce522855463f2",
+        "name": "",
+        "server": "e95ac9c8f97d8aa3",
+        "client": "",
+        "x": 740,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "0c569da6d07d9770",
+        "type": "ui_ui_control",
+        "z": "735ce522855463f2",
+        "name": "",
+        "events": "all",
+        "x": 560,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eddf164d7940ee65",
+        "type": "ui_form",
+        "z": "735ce522855463f2",
+        "name": "",
+        "label": "Mot de passe",
+        "group": "cd5edce01fd63d78",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "",
+                "value": "mdp",
+                "type": "password",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "mdp": ""
+        },
+        "payload": "",
+        "submit": "Valider",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 120,
+        "y": 1540,
+        "wires": [
+            [
+                "4978f9895aa4818c"
+            ]
+        ]
+    },
+    {
+        "id": "99e195ea5855a3c8",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "envoi id",
+        "func": "var id = global.get(\"id\");\nmsg.payload = { \"requete\": \"id\", \"id\": id };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1700,
+        "wires": [
+            [
+                "26ec408c1e53e4bf"
+            ]
+        ]
+    },
+    {
+        "id": "d7a846e2cd8a9798",
+        "type": "delay",
+        "z": "735ce522855463f2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 360,
+        "y": 1700,
+        "wires": [
+            [
+                "99e195ea5855a3c8"
+            ]
+        ]
+    },
+    {
+        "id": "9d07b69c86f46318",
+        "type": "function",
+        "z": "735ce522855463f2",
+        "name": "function 4",
+        "func": "msg.payload = global.get(\"id\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 380,
+        "wires": [
+            [
+                "b214fe9a5ceae911"
+            ]
+        ]
+    },
+    {
+        "id": "736a3c26f94d2756",
+        "type": "inject",
+        "z": "735ce522855463f2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1190,
+        "y": 380,
+        "wires": [
+            [
+                "9d07b69c86f46318"
+            ]
+        ]
+    },
+    {
+        "id": "5d03a60cd757fc1d",
+        "type": "ui_spacer",
+        "z": "735ce522855463f2",
+        "name": "spacer",
+        "group": "647052b61f3de1c7",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "dd04cc212abe1d9e",
+        "type": "ui_spacer",
+        "z": "735ce522855463f2",
+        "name": "spacer",
+        "group": "647052b61f3de1c7",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8ffbe16478302b2e",
+        "type": "ui_spacer",
+        "z": "735ce522855463f2",
+        "name": "spacer",
+        "group": "cabfe69863551152",
+        "order": 2,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "7c28546cf94c6aa8",
+        "type": "ui_spacer",
+        "z": "735ce522855463f2",
+        "name": "spacer",
+        "group": "cabfe69863551152",
+        "order": 9,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "79d922bc751f5f97",
+        "type": "ui_group",
+        "name": "Demande changement",
+        "tab": "91b5babfa149cd08",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cabfe69863551152",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "923c4390429a51c4",
+        "order": 1,
+        "disp": false,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "94b8bf3298c668c4",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "91b5babfa149cd08",
+        "order": 2,
+        "disp": false,
+        "width": 1,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0cc5b1248ffc1a26",
+        "type": "ui_group",
+        "name": "Proposition de salle",
+        "tab": "a221552930368cb8",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a1fce82c8d27218b",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "50cb975ddfab61f7",
+        "order": 1,
+        "disp": false,
+        "width": 14,
+        "collapse": false,
+        "className": "",
+        "info": "<div style=\"width: 100%; height: 100%; background-color: green;\">\r\n    <div class=\"content\">\r\n        <span>{{(msg.payload)}}</span>\r\n    </div>\r\n</div>"
+    },
+    {
+        "id": "e95ac9c8f97d8aa3",
+        "type": "websocket-listener",
+        "path": "ws://172.16.16.180:3080/ws",
+        "wholemsg": "false"
+    },
+    {
+        "id": "0124f391714d0602",
+        "type": "ui_group",
+        "name": "durée",
+        "tab": "ef6fd4d010a596c9",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "621e648c1a918dbf",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "ef6fd4d010a596c9",
+        "order": 2,
+        "disp": false,
+        "width": "1",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "83a7753a86b1e439",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "624f1ca989a67da8",
+        "order": 1,
+        "disp": false,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "647052b61f3de1c7",
+        "type": "ui_group",
+        "name": "Salle",
+        "tab": "b46b74d67a90741c",
+        "order": 1,
+        "disp": false,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e97d9fdad294ff7d",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "2c57c5e0b6fcdff2",
+        "order": 2,
+        "disp": false,
+        "width": "1",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cd5edce01fd63d78",
+        "type": "ui_group",
+        "name": "Mot de passe",
+        "tab": "2c57c5e0b6fcdff2",
+        "order": 1,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "91b5babfa149cd08",
+        "type": "ui_tab",
+        "name": "Recherche de salle",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "923c4390429a51c4",
+        "type": "ui_tab",
+        "name": "Accueil",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "a221552930368cb8",
+        "type": "ui_tab",
+        "name": "Résultat de recherche",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "50cb975ddfab61f7",
+        "type": "ui_tab",
+        "name": "Etat salle",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "ef6fd4d010a596c9",
+        "type": "ui_tab",
+        "name": "Occuper la salle",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "624f1ca989a67da8",
+        "type": "ui_tab",
+        "name": "Surprise",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "b46b74d67a90741c",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 8,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2c57c5e0b6fcdff2",
+        "type": "ui_tab",
+        "name": "Configuration",
+        "icon": "dashboard",
+        "order": 7,
+        "disabled": false,
+        "hidden": true
+    }
+]
